@@ -1,0 +1,177 @@
+//Button variable
+.btn
+	@apply text-16 font-normal text-center cursor-pointer
+	transition: .3s all ease-in-out
+	border: 1px solid transparent
+	&.btn-primary
+		@apply inline-flex text-center cursor-pointer items-center justify-center
+		height: 50px
+		padding: 0 15px
+		min-width: 160px
+		span
+			@apply text-white uppercase font-bold text-16 transition
+			&::first-letter
+				text-transform: uppercase
+		em
+			@apply text-white text-24 transition
+			height: 28px
+			line-height: 30px
+			width: 15px
+		
+	&.red
+		@apply text-white bg-primary 
+		&:hover
+			border-color: $primary
+			@apply bg-white
+			span,em
+				@apply text-primary
+			em
+				transform: translateX(3px)
+	&.grey
+		@apply text-main bg-main 
+		&:hover
+			border-color: $main
+			@apply bg-white
+			span,em
+				@apply text-main
+			em
+				transform: translateX(-3px)
+		em
+			@apply mr-3
+	&.btn-view-more
+		@apply text-blue flex text-center cursor-pointer text-12 font-semibold uppercase
+		span
+			@apply text-blue inline-block  font-semibold transition
+			font-size: 12px
+		em
+			@apply inline-block transition 
+			font-size: 22px
+			height: 14px
+			line-height: 14px
+		@media screen and ( max-width:1024px)
+			@apply text-18
+		&::first-letter
+			text-transform: uppercase
+		&:hover
+			span
+				@apply text-primary
+			em
+				@apply text-primary
+				transform: translateX(2px)
+	&.btn-modal-close
+		z-index: 9
+		width: 40px
+		height: 40px
+		@apply flex items-center justify-center absolute top-0 right-0 bg-primary pointer-events-auto
+		&:focus
+			outline: none
+		span
+			@apply text-24 text-white
+//CSS icon
+.plus-icon
+	@apply flex items-center justify-center text-white relative bg-primary
+	width: 32px
+	height: 32px
+	border-radius: 50%
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		left: 50%
+		bottom: 14px
+		width: 18px
+		height: 2px
+		background: #ffffff
+		transform: translate(-50%,-50%)
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		left: 50%
+		bottom: 7px
+		width: 2px
+		height: 18px
+		background: #ffffff
+		transform: translateX(-50%)
+	&.plus-icon-blue
+		background: #ffffff
+		&:before,&::after
+			background: $blue
+		&:before
+			bottom: 14px
+			width: 14px
+			height: 2px
+		&:after
+			bottom: 9px
+			width: 2px
+			height: 14px
+
+.icon-image
+	width: 34px
+	height: 34px
+	background-repeat: no-repeat !important
+	background-position: center !important
+	@media screen and ( max-width:1280px)
+		width: 28px
+		height: 28px
+	&.icon-eyes
+		width: 70px
+		height: 70px
+		@apply rounded-full bg-white
+		background-size: 30px 20px
+		background: url('../img/icon/eye.png')
+//Swiper navigation
+.nav-arrow-prev,.nav-arrow-next
+	@apply absolute top-50 flex z-10 items-center justify-center rounded-full transition
+	background: #edeceb
+	transform: translateY(-50%)
+	width: 40px
+	height: 40px
+	@media screen and ( max-width:1024px)
+		width: 30px
+		height: 30px
+		
+	&.white
+		background: #ffffff
+		span
+			color: #333333
+	&.grey
+		background: #323232
+		span
+			color: #ffffff
+	&.white-arrow
+		background: none
+		span
+			color: #ffffff
+	&.grey-arrow
+		background: none
+		span
+			color: #999999
+	span
+		transition: .3s all ease-in-out
+		font-size: 24px
+		height: 16px
+		line-height: 16px
+		@apply text-primary
+		@media screen and ( max-width:1024px)
+			font-size: 18px
+	&:hover
+		@apply bg-primary
+		span
+			@apply text-white
+.nav-arrow-next
+	right: 0
+.nav-arrow-prev
+	left: 0
+.button-wrapper-center
+	@apply flex items-center justify-center
+.button-wrapper-right
+	@apply flex items-center justify-start
+.button-wrapper-end
+	@apply flex items-center justify-end
+.btn-left
+	@apply flex justify-start items-center
+.btn-center
+	@apply flex justify-center items-center
+.btn-right
+	@apply flex justify-end items-center

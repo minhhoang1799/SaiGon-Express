@@ -1,0 +1,71 @@
+.home-7
+	.slide
+		position: relative
+		.item
+			background: #f5f5f5
+			padding: 20px
+			border-radius: 15px
+			.image
+				border-radius: 10px
+				overflow: hidden
+				width: 100%
+				height: 100%
+				img
+					width: 100%
+					height: 100%
+			.content
+				.title
+					margin: 20px 0
+					a
+						font-weight: 700
+						font-size: 18px
+						margin: 30px 0
+				ul
+					display: flex
+					align-items: center
+					li
+						margin: 0 25px
+						time
+							margin: 0
+							position: relative
+							color: #666
+						a
+							color: #666
+							font-size: 16px
+						em
+							font-size: 16px
+							color: $mainColor
+							margin-right: 5px
+						&:first-child
+							margin-left: 0
+							position: relative
+							&::after
+								content: ''
+								position: absolute
+								top: 0
+								right: -25px
+								width: 1px
+								height: 16px
+								background: #cccccc
+						&:last-child
+							margin-right: 0
+		.swiper-prev,.swiper-next
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			width: 40px
+			height: 40px
+			background: #ffffff
+			margin: 0 5px
+			cursor: pointer
+			border-radius: 50%
+			display: flex
+			justify-content: center
+			align-items: center
+			em
+				font-size: 24px
+				color: #999999	
+		.swiper-prev
+			left: -5%
+		.swiper-next
+			right: -5%

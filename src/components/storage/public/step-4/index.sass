@@ -1,0 +1,70 @@
+.storage-calcualte-step-4
+	.padding-section
+		@apply py-16
+	.stage-wrap
+		@apply p-0
+	.side-temp-total
+		+boxshadow 
+	.dash-line
+		background: #e1e1e1
+		@apply inline-block w-full my-1
+	.item-row
+		.col
+			margin-bottom: 30px
+	.item-checkbox 
+		.image-wrapper 
+			a
+				display: block
+				height: 120px
+				max-width: 120px
+				min-width: 120px
+				width: auto
+				img
+					width: 100%
+					height: 100%
+					object-fit: contain
+		.caption
+			@apply flex justify-center items-center
+			.title
+				@apply text-center normal-case
+			.status
+				@apply text-16 font-semibold text-primary text-left w-full
+			.description
+				@apply text-14 text-main w-full
+				*
+					@apply text-14 text-main
+				p
+					@apply mb-1 text-14
+					strong
+						@apply text-16 font-bold
+			p
+				@apply text-14
+	.btn-right
+		.btn-primary.grey
+			@apply mr-2
+	.side-temp-total
+		@apply py-10
+		.title
+			@apply text-24 text-primary font-bold mb-6 px-10
+		p
+			@apply mb-0
+			strong
+				@apply text-16 text-main font-bold
+		.table-wrap,.type
+			@apply px-10
+		table
+			@apply w-full 
+			tr
+				td
+					@apply py-2 text-14 text-main text-right
+					&:first-child
+						@apply text-left
+					span
+						@apply text-14 text-primary
+		.total-table
+			@apply py-4 px-10
+			tr
+				td
+					@apply text-14 text-primary font-bold
+		.note
+			@apply text-14 text-primary text-right px-10

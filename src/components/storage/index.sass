@@ -1,0 +1,314 @@
+.storage-calcualte
+.stage-wrap
+	padding: 0 8.33%
+	@media screen and ( max-width: 1024px)
+		@apply p-0
+.wrapper-form
+	.form-group
+		@apply flex justify-start  items-center mb-5
+		.value
+			@apply text-14 text-main pl-2
+.item-calculator
+	@apply flex flex-col items-center justify-center bg-white py-12
+	box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.09)
+	.item-quantity
+		@apply ml-2
+		background: #f3f3f3
+		input
+			background: #f3f3f3
+	.qcheckbox
+		@apply flex items-center
+		input[type='checkbox']
+			width: 24px
+			height: 24px
+			background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23999999' width='24px' height='24px'><path d='M0 0h24v24H0z' fill='none'/><path d='M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z'/></svg>")
+			&:checked
+				background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ec1f27' width='24px' height='24px'><path d='M0 0h24v24H0z' fill='none'/><path d='M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/></svg>")
+	.image-wrapper
+		a
+			display: block
+			height: 150px
+			max-width: 150px
+			min-width: 150px
+			width: auto
+			img
+				width: 100%
+				height: 100%
+				object-fit: contain
+			@media screen and ( max-width: 1024px)
+				display: block
+				height: 90px
+				max-width: 130px
+				min-width: 130px
+				width: auto
+				img
+					width: 100%
+					height: 100%
+					object-fit: contain
+	.caption
+		@apply pb-6 flex
+		.title
+			@apply text-20 font-bold text-main uppercase pt-6 pb-2 text-center block
+			@screen lg
+				@apply pt-8
+		.item
+			@apply flex flex-col px-2
+			p
+				@apply text-primary text-14 px-4 text-center
+.item-checkbox
+	@apply flex flex-col items-center justify-center bg-white py-8 px-10 h-full
+	+boxshadow
+	.qcheckbox
+		@apply pt-4 pb-2
+		@screen lg
+			@apply pt-8 pb-4
+		input
+			width: 24px
+			height: 24px
+			background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23333333' width='24px' height='24px'><path d='M0 0h24v24H0z' fill='none'/><path d='M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z'/></svg>")
+			&:checked
+				background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ec1f27' width='24px' height='24px'><path d='M0 0h24v24H0z' fill='none'/><path d='M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/></svg>")
+	.caption
+		@apply flex flex-col w-full
+		.title
+			@apply text-16 text-main font-bold text-main uppercase w-full
+			@screen lg
+				@apply text-20  mb-2
+		.unit
+			@apply text-14 text-main w-full
+			@screen lg
+				@apply text-16
+	.image-wrapper
+		a
+			display: block
+			height: 160px
+			max-width: 190px
+			min-width: 190px
+			width: auto
+			img
+				width: 100%
+				height: 100%
+				object-fit: contain
+			@media screen and ( max-width: 1024px)
+				display: block
+				height: 90px
+				max-width: 130px
+				min-width: 130px
+				width: auto
+				img
+					width: 100%
+					height: 100%
+					object-fit: contain
+
+
+
+.item-quantity
+	width: 160px
+	border: solid 1px #c5c5c5
+	@apply bg-white
+	&.active
+		z-index: 111
+		opacity: 1
+		pointer-events: auto
+		transition:  opacity .3s ease-in-out
+	.input-group
+		display: flex
+		justify-content: space-between
+		align-items: center
+	.input-group-btn
+		display: flex
+		justify-content: center
+		align-items: center
+		height: 40px
+		width: 45px
+		position: relative
+		&:hover
+			background: $main
+			color: #fff
+			transition: .25s all ease-in-out
+		.qty-plus
+			height: 100%
+			width: 100%
+			line-height: 40px
+			text-align: center
+			display: flex
+			align-items: center
+			justify-content: center
+			&:before
+				font-family: 'Material Design Icons'
+				content: '\F0415'
+				font-size: 18px
+				color: #333333
+			em
+				display: none
+			&:hover 
+				&:before
+					color: #ffffff
+		.qty-minus
+			height: 100%
+			width: 100%
+			line-height: 40px
+			text-align: center
+			display: flex
+			align-items: center
+			justify-content: center
+			&:before
+				font-family: 'Material Design Icons'
+				content: '\F0374'
+				font-size: 18px
+				color: #333333
+			em
+				display: none
+			&:hover 
+				&:before
+					color: #ffffff
+	input
+		border: 0
+		text-align: center
+		background: #ffffff
+		width: 45px
+		height: 40px
+	&:hover 
+		a
+			color: #f5f5f5!important
+.storage-progress-stage
+	@apply bg-primary
+	*
+		@apply text-white
+	.container
+		@media screen and ( max-width:  920px)
+			@apply overflow-x-auto
+	ul
+		@apply flex  justify-between items-center py-8
+		@media screen and ( max-width:  920px)
+			@apply whitespace-no-wrap -m-4
+	li
+		@apply relative
+		@media screen and ( max-width: 920px)
+			@apply px-4
+		a
+			@apply flex flex-col items-center
+		&.active,&:hover
+			.step
+				@apply text-white
+			.box
+				@apply  bg-white 
+				.text
+					@apply text-primary
+				&:before
+					@apply opacity-100
+		&:not(:last-child)
+			.box
+				&::after
+					content: ''
+					@apply block absolute top-50  translate-y-50
+					z-index: 9
+					width: 0
+					right: -20px
+					height: 0
+					border-style: solid
+					border-width: 3.5px 0 3.5px 7px
+					border-color: transparent transparent transparent #ffffff
+					@media screen and ( max-width: 1280px)
+						right: -12px
+					@media screen and ( max-width: 1024px)
+						right: -20px
+		.box
+			@apply  bg-primary px-1 text-center relative flex justify-center items-center transition
+			border: 1px solid #ffffff
+			width: 220px
+			height: 80px
+			border-radius: 5px
+			&:before
+				content: ''
+				@apply block absolute left-50 translate-x-50 transition opacity-0
+				z-index: 9
+				width: 0
+				top: -14px
+				height: 0
+				border-style: solid
+				border-width: 0 8px 13px 8px
+				border-color: transparent transparent #ffffff transparent
+				transition: .3s all ease-in-out
+			.text
+				@apply text-16 text-white font-extrabold uppercase leading-relaxed whitespace-normal
+			@media screen and ( max-width: 1280px)
+				width: 180px
+				height: 60px
+				.text
+					@apply text-12
+			@media screen and ( max-width: 1024px)
+				width: 150px
+				height: 50px
+				.text
+					@apply text-11
+		.step
+			@apply text-30  font-extrabold pb-6 transition
+			color: #f8b5b5
+			@media screen and ( max-width: 1280px)
+				@apply text-24
+.storage-information
+	@apply py-16
+	+boxshadow
+	.image-wrapper
+		@apply pb-8
+		a
+			img
+				max-width: 100%
+				height: auto
+	.caption
+		@apply text-16 text-main mb-6
+		p
+			@apply text-16 mb-6
+		a
+			@apply text-primary inline-block ml-1
+	.external-link 
+		@apply flex text-14 text-main pb-8
+		em
+			font-size: 24px
+			color: #333333
+			@apply inline-block mr-2
+		a
+			@apply text-14
+			color: #24aaff
+	.over-flow-scollbar
+		p
+			@apply mb-4 leading-relaxed text-16
+	ul
+		li
+			@apply flex mb-2 relative flex-col pl-2
+			+right-chevron
+			&::before
+				@apply absolute top-0 
+				left: 0
+			ul
+				@apply inline-block pt-6 pl-2 mb-6
+				li
+					@apply inline-block mb-2
+					+list-dot
+	.contact-icon
+		@apply flex
+		@media screen and ( max-width: 767px)
+			@apply flex-col
+		.icon
+			&:not(:last-child)
+				@apply pl-4
+				@media screen and ( max-width: 767px)
+					@apply mb-4 pl-0
+				
+			a
+				@apply flex items-center justify-center
+				em
+					width: 60px
+					height: 60px
+					border: 1px solid #fff
+					@apply rounded-full relative z-20 bg-primary flex items-center justify-center text-white
+					font-size: 30px
+				.phone
+					@apply relative z-10 bg-primary text-white flex justify-center -ml-6 items-center
+					height: 40px
+					width: 200px
+					border-top-right-radius: 5px
+					border-bottom-right-radius: 5px
+					span
+						@apply text-white

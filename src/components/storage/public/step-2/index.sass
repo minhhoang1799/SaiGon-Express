@@ -1,0 +1,31 @@
+.storage-calcualte-step-2
+	.btn-primary.grey
+		@apply mr-2
+	.padding-section
+		@apply py-16
+	.item-checkbox
+		@apply relative py-12 px-0
+		.caption
+			@apply justify-center items-center 
+		.title
+			@apply text-center pb-4
+		.content
+			border-top: 1px solid transparent
+			&.active
+				border-color: #e1e1e1
+				.arrow-toggle
+					@apply bg-primary
+					em
+						@apply text-white
+						&::before
+							transform: rotate(-180deg)
+			.description
+				@apply hidden px-8 pt-4
+			.arrow-toggle
+				@apply absolute bottom-0 left-50 translate-x-50 bg-black flex justify-center items-center
+				width: 60px
+				height: 30px
+				em
+					@apply text-white
+					font-size: 24px
+					height: 30px

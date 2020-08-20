@@ -1,0 +1,240 @@
+header
+	@apply fixed top-0 left-0 w-full z-50 opacity-100
+	height: 140px
+	background: #464646
+	@media screen and ( max-width: 1024px)
+		height: 60px
+	.nav-brand
+		@media screen and ( max-width: 1024px)
+			@apply h-full flex items-center justify-center
+		a
+			display: block
+			height: 80px
+			max-width: 220px
+			width: auto
+			@media screen and ( max-width: 1280px)
+				height: 70px
+				max-width: 180px
+			@media screen and ( max-width: 1024px)
+			
+				height: 60px
+				max-width: 140px
+				
+				
+			img
+				width: 100%
+				height: 100%
+				object-fit: contain
+	.container
+		@apply flex justify-between items-center pt-5 pb-3
+		@media screen and ( max-width: 1024px)
+			@apply p-0 h-full px-4
+			
+	.wrap-left,.wrap-right
+		@apply h-full
+	.wrap-top
+		@apply flex items-center justify-end pb-3
+		@media screen and ( max-width: 1024px)
+			@apply p-0 h-full
+			
+	.wrap-bottom
+		@apply flex
+	.dash-line
+		background: #747474
+	.contact-wrap
+		@media screen and ( max-width: 1024px)
+			@apply flex flex-col items-center pt-4
+			.ModuleContent
+				@apply flex flex-col justify-center items-center
+		.item
+			transform: skew(-30deg)
+			@apply  bg-primary inline-block transition
+			a
+				transform: skew(30deg)
+				@apply px-4 py-2 inline-flex items-center justify-center
+				*
+					@apply text-white transform-none transition
+				em
+					@apply text-18  inline-block mr-2 
+				span
+					@apply text-16 font-bold transition
+			&:hover
+				@apply bg-white
+				*
+					@apply text-primary
+				&:last-child
+					@apply bg-primary 
+				
+						
+					*
+						@apply text-white
+			&:last-child
+				@apply bg-white ml-2
+				@media screen and ( max-width: 1024px)
+					border: 1px solid $primary
+					@apply m-0 my-4
+				*
+					@apply text-primary
+
+	.check-status
+		@media screen and ( max-width: 1024px)
+
+			@apply mt-4 flex items-center
+			.Module,.ModuleContent
+				@apply w-full flex items-center justify-center
+
+		a
+			@apply flex items-center justify-center py-1 px-4 bg-primary ml-3 cursor-pointer relative pl-10 transition
+			width: 135px
+			height: 35px
+			border: 1px solid transparent
+			border-radius: 5px
+			&:before
+				content: ''
+				display: block
+				position: absolute
+				pointer-events: none
+				left: 15px
+				bottom: 8px
+				z-index: 9
+				background: url('../img/icon/document.png')
+				background-repeat: no-repeat
+				background-size: contain
+				width: 20px
+				height: 18px
+				background-position: center
+
+			span
+				@apply text-16 text-white font-bold uppercase whitespace-no-wrap
+.social-wrap
+	@apply flex pl-4
+	@media screen and ( max-width: 1024px)
+		@apply flex justify-center items-center
+	.ModuleContent
+		@apply flex pl-4
+		@media screen and ( max-width: 1024px)
+			@apply flex justify-center items-center 
+			.fb
+				em
+					color: #4267B2
+			.linked
+				em
+					color: #2867B2
+			.yt
+				em
+					color: #FF0000
+			.mail
+				em
+					color: #282828
+	a
+		@apply flex items-center justify-center p-4
+		@screen lg
+			@apply p-2
+		&:hover
+			em
+				transform: translateY(-3px)
+		em
+			@apply text-14 text-white transition
+			@media screen and ( max-width: 1024px)
+				@apply text-30
+				
+.language-wrapper
+	@apply px-4 flex items-center
+	.current-language
+		@apply relative z-40  text-white list-none
+		a
+			@apply flex items-center justify-center
+			display: block
+			height: 20px
+			max-width: 20px
+			min-width: 20px
+			width: auto
+			img
+				width: 100%
+				height: 100%
+				object-fit: contain
+.search-wrapper
+	.search-toggle
+		@apply pl-4 mr-6
+		border-left: 1px solid #747474
+		@screen lg
+			@apply mr-4
+		em
+			@apply text-18 text-white
+			
+.main-menu-toggle
+	@apply hidden
+	@media screen and ( max-width:  1024px)
+		@apply block
+.mobile-wrapper
+	@apply fixed w-full h-full left-0 block z-0 overflow-y-auto opacity-0  pointer-events-none pt-4 pr-4
+	transform: translateX(100%)
+	transition: all .8s cubic-bezier(.68,-.55,.265,1.55)
+	top: 60px
+	max-width: 320px
+	border-right: 1px solid $primary
+	border-bottom: 1px solid $primary
+	@screen lg
+		@apply hidden
+
+	&.active
+		@apply opacity-100 pointer-events-auto bg-white z-20
+		transform: translateX(0)
+.navbar-primary-menu
+	@apply flex items-center
+	@media screen and ( max-width: 1024px)
+		@apply flex-col justify-center items-start px-4 pb-8
+	li
+		@apply py-2 block
+		@screen lg
+			@apply inline-block
+		&:hover,&.active
+			a
+				@apply text-primary
+		@apply inline-block
+		a
+			@apply text-white uppercase  text-16 font-bold  transition px-3
+			@media screen and ( max-width: 1280px)
+				@apply text-12 px-2
+			@media screen and ( max-width: 1024px)
+				@apply text-primary
+	.drop-down
+		@media screen and ( max-width: 1024px)
+			@apply w-full p-0
+			.title
+				@apply flex justify-between items-center
+				a
+					width: calc( 100% - 30px )
+				em
+					@apply flex items-center justify-center
+					width: 30px
+					height: 30px
+					
+			ul
+				@apply hidden 
+				li
+					@apply block 
+		@media screen and ( min-width: 1024.1px)
+			@apply relative
+			&:hover
+				ul
+					@apply block
+			.title
+				a
+					
+				em
+					@apply block
+					@screen lg
+						@apply hidden
+			ul
+				@apply hidden absolute top-100 left-0 bg-white
+				box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.23)
+				li
+					@apply py-3 w-full
+					&:not(:last-child)
+						border-bottom: 1px solid #e1e1e1
+					&:hover,&.active
+						a
+							@apply text-primary
+					a
+						@apply text-14 text-main uppercase px-5 font-normal whitespace-no-wrap w-full

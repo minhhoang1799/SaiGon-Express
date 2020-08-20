@@ -1,0 +1,60 @@
+.home-3
+	background-image: url(../img/home/bg1.png)
+	background-size: cover
+	background-position: center center
+	.main-title
+		color: #fff
+	.list-item
+		.icon
+			display: flex
+			justify-content: center
+		.content
+			margin-top: 20px
+			text-align: center
+			.decs
+				color: #ffffff
+				font-weight: 700
+				font-size: 18px
+			p
+				color: #adadad
+				font-size: 14px
+				margin-top: 10px
+	@media (min-width: 1025px)
+		position: relative
+		&::before
+			content: url('../img/home/4.png')
+			position: absolute
+			bottom: 30px
+			left: 0
+		&::after
+			content: url('../img/home/5.png')
+			position: absolute
+			bottom: 30px
+			right: 0
+		.box-left
+			.list-item
+				.icon
+					justify-content: flex-end
+				.content
+					text-align: right
+		.box-right
+			.list-item
+				.icon
+					justify-content: flex-start
+				.content
+					text-align: left
+.home-4
+	background: #fff
+	.item
+		.icon
+			display: flex
+			justify-content: center
+			align-items: center
+		.content
+			text-align: center
+			.title
+				font-weight: 700
+				font-size: 48px
+				color: $mainColor
+			p
+				font-size: 18px

@@ -1,0 +1,152 @@
+.toggle-show-more
+	article
+		.content-height
+			overflow: hidden
+			max-height: 150px
+			transition: max-height .5s ease-in-out
+		&.active
+			.content-height
+				transition: max-height 1s ease-in-out
+			.btn-show-more 
+				em
+					&:after
+						transition: .3s all ease-in-out
+						opacity: 0
+.table-responsive
+	@media screen and ( max-width:768px)
+		overflow-x: auto
+	table
+		@apply w-full
+		@media screen and ( max-width:768px)
+			white-space: nowrap
+		thead
+			tr
+				th
+					@apply bg-primary text-white text-16 font-bold text-left  py-4  px-6
+					@media screen and ( min-width:1024px)
+						&:first-child
+							@apply pl-12
+		tbody
+			tr
+				&:nth-child(even)
+					background: #f5f5f5
+				td
+					@apply py-4 px-6
+					&:first-child
+						width: 25%
+					@media screen and ( min-width:1024px)
+						@apply pl-12
+					&:last-child
+						width: 25%
+						@apply  text-right pr-12
+						.btn-view-more
+							span
+								color: #af9a56
+.read-more-wrapper
+	article
+		.row
+			display: flex
+		p
+			display: none
+		.btn-primary
+			@apply mt-4
+			.text-2
+				@apply hidden
+			&:hover
+				em
+					transform: translateX(0)
+		.caption,.caption-normal
+			p
+				@apply block
+				&:nth-child(n+2)
+					display: none
+		&.active
+			p
+				@apply block
+			.caption,.caption-normal
+				p
+					@apply block
+					&:nth-child(n+2)
+						display: block
+			.btn-primary
+				span
+					&:first-child
+						display: none
+					&:last-child
+						display: block
+				.text-1
+					@apply hidden
+				.text-2
+					@apply block
+				em
+					&:after
+						transition: .3s all ease-in-out
+						opacity: 0
+.over-flow-scollbar
+	height: 300px
+	padding-right: 15px
+	overflow-y: auto
+	scrollbar-width: thin
+	scrollbar-color: $primary #cccccc
+	&::-webkit-scrollbar
+		background: #cccccc
+		width: 5px
+	&::-webkit-scrollbar-track
+		-webkit-box-shadow: inset 0 0 6px #cccccc
+		background-color: #cccccc
+	&::-webkit-scrollbar-thumb
+		background-color: $primary
+	@media screen and ( max-width:1024px)
+		height: 400px
+.qradio
+	input
+		background-repeat: no-repeat
+		background-position: center
+		appearance: none
+		@apply block
+		width: 20px
+		height: 20px
+		background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black' width='20px' height='20px'><path d='M0 0h24v24H0z' fill='none'/><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z'/></svg>")
+		&:checked
+			background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff0000' width='20px' height='20px'><path d='M0 0h24v24H0z' fill='none'/><path d='M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z'/></svg>")
+.qcheckbox
+	@apply flex
+	label
+		@apply inline-block pl-2
+	input
+		background-repeat: no-repeat
+		background-position: center
+		appearance: none
+		@apply block
+		width: 20px
+		height: 20px
+		background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ec1f27' width='18px' height='18px'><path d='M0 0h24v24H0z' fill='none'/><path d='M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z'/></svg>")
+		&:checked
+			background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ec1f27' width='18px' height='18px'><path d='M0 0h24v24H0z' fill='none'/><path d='M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/></svg>")
+.main-title
+	font-size: 36px
+	font-weight: 800
+	text-transform: uppercase
+	padding-bottom: 10px
+	&.line
+		position: relative
+		&::before
+			content: ''
+			position: absolute
+			bottom: 0
+			left: 50%
+			transform: translateX(-50%)
+			width: 130px
+			height: 2px
+			background: $mainColor
+.title-child
+	font-size: 35px
+	text-transform: uppercase
+	font-weight: 800
+	color: $mainColor
+.main-line
+	padding: 50px 0
+.main-child
+	padding: 30px 0
+main
+	background: #fafafa

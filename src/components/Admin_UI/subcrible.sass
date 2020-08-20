@@ -1,0 +1,40 @@
+.subscribe
+	@media screen and ( max-width: 767px)
+		@apply mb-8
+		
+	.subscribefrm
+		@apply relative px-4
+		border: 2px solid #cecece
+		input
+			background: none
+			width: 100%
+			height: 40px
+			padding: 0 20px  0 0
+			@apply  text-16 font-normal
+			&::placeholder
+				@apply text-14  text-white
+			&:focus
+				outline: none
+		button
+			@apply absolute 
+
+			right: 15px
+			bottom: 10px
+			display: flex
+			justify-content: flex-end
+			align-items: center
+			width: 32px
+			&:focus
+				outline: none
+			.text
+				@apply text-white font-bold text-14 uppercase
+			&:hover
+				em
+					&:before
+						transform: translateX(3px)
+			em
+				@apply  text-primary transition
+				font-size: 18px
+				transition: .3s all ease-in-out
+				&::before
+					@apply transition

@@ -1,0 +1,127 @@
+footer
+	color: #fff
+	.footer-top
+		background: url('../img/bg/footer-bg.jpg')
+		background-repeat: no-repeat
+		background-size: cover
+		background-position: center
+		overflow: hidden
+		@apply pt-16 pb-4
+		@media screen and ( max-width: 576px)
+			@apply pb-16
+			
+		.social-network
+			@apply flex 
+			a
+				@apply flex mr-4
+				&:hover
+					em
+						&::before
+							transform: translateY(-3px)
+				em
+					font-size: 24px
+					&::before
+						@apply transition
+			@media screen and ( max-width: 576px)
+				@apply justify-center items-center
+				a
+					@apply mr-0 px-4
+
+		.subscrible-text
+			@apply text-14 leading-normal inline-block mb-6
+		*
+			color: #ffffff
+		.footer-brand
+			@apply flex items-center pb-10
+			.ModuleContent
+				@apply flex items-center justify-start
+				@media screen and ( max-width: 576px)
+						@apply  items-center  flex-col justify-center
+			.title
+				@apply text-20 font-extrabold uppercase pl-4 mb-0
+			@media screen and ( max-width: 576px)
+				@apply flex-col pb-6
+				.title
+					@apply mt-4 
+		h3,h4
+			color: #333333 !important
+		.title
+			@apply text-18 uppercase text-left font-bold block mb-6
+			&.social-title
+				@media screen and ( max-width: 576px)
+					@apply text-center w-full
+		ol
+			@apply mb-0 block
+			@screen lg
+				@apply mb-8 
+			li
+				@apply flex items-start justify-start mb-3
+				&:last-child
+					@apply mb-0
+				span
+					@apply text-14 leading-relaxed
+				em
+					font-size: 16px
+					@apply inline-block mr-2 mt-1
+			@media screen and ( max-width: 576px)
+				@apply mb-0
+				li
+					em
+						@apply mt-0
+		ul
+			@media screen  and ( min-width: 576px) and ( max-width: 1024px)
+				@apply mb-8
+			li
+				@apply inline-block mb-3
+				&.active
+					a
+						@apply underline text-primary
+				&:last-child
+					@apply mb-0
+				a
+					@apply transition text-14
+				&:hover
+					&::before
+						@apply text-primary
+					a
+						@apply text-primary
+					
+				+right-arrow
+				&::before
+					@apply transition
+					color: #ffffff
+	.footer-bottom
+		@apply bg-brown py-4
+		.container
+			@apply flex items-center justify-center flex-col
+		.term-policy
+			@apply mb-2
+			ul
+				@apply flex items-center ml-3
+		
+					
+				li
+					@apply inline-block px-3
+					&:not(:last-child)
+						border-right: 1px solid #ffffff
+						@media screen and ( max-width: 576px)
+							border-right: 0
+							
+					a
+						@apply text-14
+						color: #cccccc
+				@media screen and ( max-width: 400px)
+					@apply flex-col
+					li
+						@apply mb-1
+			@media screen and ( max-width: 576px)
+				order: 1
+		.copyright
+			@apply text-14 mb-0  flex items-center justify-center text-center
+			color: #cccccc
+			@media screen and ( max-width: 576px)
+				@apply mt-4
+				order: 2
+			*
+				@apply text-14 mb-0
+				color: #cccccc

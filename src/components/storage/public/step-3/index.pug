@@ -1,0 +1,105 @@
+.storage-progress-stage
+	.container
+		ul
+			li
+				a(href="#")
+					.step 01
+					.box
+						.text Chọn kho
+			li
+				a(href="#")
+					.step 02
+					.box
+						.text Chọn Loại kho
+			li
+				a(href="#")
+					.step 03
+					.box
+						.text Chọn Diện tích và thời gian thuê kho
+			li
+				a(href="#")
+					.step 04
+					.box
+						.text Dịch vụ tiện ích đi kèm
+			li
+				a(href="#")
+					.step 05
+					.box
+						.text Thông tin liên hệ
+section.storage-calcualte.storage-calcualte-step-3
+	.container.padding-section
+		.stage-wrap
+			.zone-title.small Chọn loại khu
+		
+			.item-calculator
+				.image-wrapper
+					a(href="#")
+						img(src="./img/icon/icon-2.png", alt="")
+				.caption
+					.item
+						.title Kho tự quản 
+						p 130.000/thang
+					.item
+						.title Kho tự quản 
+						p 20.000/thung
+				.wrapper-form
+					.form-group
+						.qcheckbox
+							input(type="checkbox")
+							.item-quantity
+								.input-group
+									.input-group-btn
+										.qty-minus.btn-number
+											em.mdi.mdi-minus
+									input.product-details-quantity.form-control.input-number(type='text', value='1')
+									.input-group-btn
+										.qty-plus.btn-number
+											em.mdi.mdi-plus
+							.value m2
+					.form-group
+						.qcheckbox
+							input(type="checkbox")
+							.item-quantity
+								.input-group
+									.input-group-btn
+										.qty-minus.btn-number
+											em.mdi.mdi-minus
+									input.product-details-quantity.form-control.input-number(type='text', value='1')
+									.input-group-btn
+										.qty-plus.btn-number
+											em.mdi.mdi-plus
+							.value 20 container(=40m2)
+					.form-group
+						.qcheckbox
+							input(type="checkbox")
+							.item-quantity
+								.input-group
+									.input-group-btn
+										.qty-minus.btn-number
+											em.mdi.mdi-minus
+									input.product-details-quantity.form-control.input-number(type='text', value='1')
+									.input-group-btn
+										.qty-plus.btn-number
+											em.mdi.mdi-plus
+							.value 40 Container (= 80m2)
+							 
+		.btn-left
+			.text thoi gian
+			.item-quantity
+				.input-group
+					.input-group-btn
+						.qty-minus.btn-number
+							em.mdi.mdi-minus
+					input.product-details-quantity.form-control.input-number(type='text', value='1')
+					.input-group-btn
+						.qty-plus.btn-number
+							em.mdi.mdi-plus
+			.value Thang
+								
+		.btn-right
+			a(href="#").btn.btn-primary.grey
+				em.mdi.mdi-arrow-left
+				span Tiếp tục  
+			a(href="#").btn.btn-primary.red
+				span Tiếp tục  
+				em.mdi.mdi-arrow-right

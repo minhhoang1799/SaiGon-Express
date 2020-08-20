@@ -1,0 +1,120 @@
+.storage-progress-stage
+	.container
+		ul
+			li
+				a(href="#")
+					.step 01
+					.box
+						.text Chọn kho
+			li
+				a(href="#")
+					.step 02
+					.box
+						.text Chọn Loại kho
+			li
+				a(href="#")
+					.step 03
+					.box
+						.text Chọn Diện tích và thời gian thuê kho
+			li
+				a(href="#")
+					.step 04
+					.box
+						.text Dịch vụ tiện ích đi kèm
+			li
+				a(href="#")
+					.step 05
+					.box
+						.text Thông tin liên hệ
+section.storage-calcualte.storage-calcualte-step-4
+	.container.padding-section
+		.stage-wrap
+			.zone-title.small thông tin liên hệ
+			.row
+				.col.w-full(class='lg:w-7/12')
+					.row.item-row
+						.col.w-full(class='lg:w-1/2 ')
+							.col-match-height
+								.item-checkbox
+									.image-wrapper
+										a(href="#")
+											img(src="./img/icon/icon-2.png", alt="")
+									.caption
+										.qcheckbox
+											input(type="checkbox")
+										.title Kho tự quản 
+										.status Miện phí
+										.description
+											p
+												strong Đơn giá
+											p Với hàng lẻ: 50.000vnđ/ khối 
+											p 20 Container (= 40m3): 1.200.000 vnđ
+											p 40 Container (= 80m3): 2.400.000 vnđ
+						.col.w-full(class='lg:w-1/2')
+							.col-match-height
+								.item-checkbox
+									.image-wrapper
+										a(href="#")
+											img(src="./img/icon/icon-2.png", alt="")
+									.caption
+										.qcheckbox
+											input(type="checkbox")
+										.title Kho tự quản 
+										.unit Đơn vị m2
+						.col.w-full(class='lg:w-1/2')
+							.col-match-height
+								.item-checkbox
+									.image-wrapper
+										a(href="#")
+											img(src="./img/icon/icon-2.png", alt="")
+									.caption
+										.qcheckbox
+											input(type="checkbox")
+										.title Kho tự quản 
+										.unit Đơn vị m2
+
+				.col.w-full(class='lg:w-5/12')
+					.side-temp-total
+						.title Tạm tính
+						p.type
+							strong Loại
+						hr.dash-line
+						.table-wrap
+							table
+								tr
+									td Số m3
+									td 120
+								tr
+									td Số thuê
+									td 130.000
+								tr
+									td Số tháng
+									td 3
+								tr
+									td 
+										p
+											strong Chi phí thuê
+									td 46.800.000
+						hr.dash-line
+						.table-wrap
+							table
+								tr
+									td Bốc xếp hàng hóa
+									td 
+										span Thỏa thuận
+						hr.dash-line
+						.table-wrap
+							table.total-table
+								tr
+									td 
+										p
+											strong Kết quả
+									td 52.400.000 vnd
+						.note (Giá trên chỉ mang tính chất tham khảo)
+			.btn-right
+				a(href="#").btn.btn-primary.grey
+					em.mdi.mdi-arrow-left
+					span Tiếp tục  
+				a(href="#").btn.btn-primary.red
+					span Tiếp tục  
+					em.mdi.mdi-arrow-right

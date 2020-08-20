@@ -1,0 +1,110 @@
+.transsport
+	
+.transsport-2
+	.form-wrapper
+		background: #f3f3f3
+		padding: 60px
+.transport-3
+	.content
+		.title
+			font-size: 18px
+			font-weight: 700
+			text-transform: uppercase
+		p
+			font-size: 16px
+			margin-top: 30px
+	.image
+		width: 100%
+		img
+			width: 100%
+			height: 100%
+		@media (min-width: 1025px)
+			height: 410px
+	a
+		width: 100%
+		height: 100%
+		.image
+			width: 100%
+			height: 100%
+			position: relative
+			img
+				position: relative
+				z-index: 2
+				width: 100%
+				height: 100%
+			&::before
+				content: url('../img/icon/play.png')
+				position: absolute
+				z-index: 3
+				top: 50%
+				left: 50%
+				transform: translate(-50%,-50%)
+.transport-4
+	.wrapper
+		border-bottom: 1px solid $mainColor
+		.main-title
+			font-size: 24px
+		.nav-transport
+			display: flex
+			justify-content: space-between
+			align-items: center
+			li
+				width: 285px
+				height: 80px
+				background: #f3f3f3
+				display: flex
+				justify-content: center
+				align-items: center
+				padding: 0 25px
+				position: relative
+				p
+					font-weight: 700
+					font-size: 16px
+				&::after
+					content: '+'
+					position: absolute
+					top: 50%
+					right: -20px
+					transform: translateY(-50%)
+					font-weight: 700
+					font-size: 24px
+				&:first-child
+					background: $mainColor
+					p
+						color: #fff
+					&::after
+						content: '='
+				&:last-child
+					&::after
+						display: none
+		.list-image
+			.image-child,.image-full
+				width: 100%
+				img
+					width: 100%
+					height: 100%
+			@media (min-width: 1025px)
+				.image-full
+					height: 390px
+				.image-child
+					height: 255px
+.table-wrapper
+	width: 100%
+	table
+		width: 100%
+		border: 1px solid #e1e1e1
+		tr
+			background: #f7f7f7
+			&:first-child
+				background: $mainColor
+			&:nth-child(2n)
+				background: #fff
+			th
+				font-size: 16px
+				font-weight: 700
+				text-transform: uppercase
+				padding: 20px 15px
+				color: #fff
+			td
+				font-size: 16px
+				padding: 20px 15px

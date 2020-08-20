@@ -1,0 +1,56 @@
+.home-2
+	+bg-global
+	.title-child
+		font-size: 24px
+		text-align: center
+		@media (min-width: 1025px)
+			text-align: right
+			font-size: 35px
+			padding: 8.33%
+	.list-item
+		background: #fff
+		border: 1px solid #ebebeb
+		border-radius: 20px
+		overflow: hidden
+		height: 100%
+		.item-child
+			margin: 0
+			border: none
+			padding: 50px 30px
+			height: auto
+			.image
+				width: 100px
+				height: 100px
+				border: 2px solid #ffffff
+			.viewmore
+				margin-top: 20px
+				a
+					font-size: 14px
+					font-weight: 700
+					color: $mainColor
+					border-bottom: 1px solid $mainColor
+		@media (min-width: 1025px)
+			.item-child
+				.viewmore
+					a
+						font-size: 0
+			&:hover
+				.item-wrapper
+					.image-transport
+						&::before
+							display: block
+					&::before
+						display: block
+					&::after
+						display: block
+					.content-wrapper
+						top: 50%
+						.icon
+							display: block
+				.item-child
+					padding: 35px 30px
+					.image
+						display: none
+					.viewmore
+						a
+							font-size: 14px

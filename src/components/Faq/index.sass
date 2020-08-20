@@ -1,0 +1,73 @@
+.faq
+	background: #fff
+.list-question
+	li
+		list-style: none
+	.title-wrapper
+		font-size: 24px
+		font-weight: 700
+		color: $mainColor
+		border-bottom: 2px solid $mainColor
+		padding-bottom: 10px
+	.question-wrapper
+		.question
+			font-size: 18px
+			padding: 20px
+			border-bottom: 1px solid #f3f3f3
+			position: relative
+			cursor: pointer
+			&::before
+				content: '\F0140'
+				font: normal normal normal 24px/1 "Material Design Icons"
+				position: absolute
+				top: 25px
+				right: 0
+				transform: translateY(-50%)
+			&::after
+				content: '\F0143'
+				font: normal normal normal 24px/1 "Material Design Icons"
+				display: none
+				position: absolute
+				top: 25px
+				right: 0
+				transform: translateY(-50%)
+		&.active
+			.question
+				color: $mainColor
+				border-color: $mainColor
+				&::before
+					display: none
+				&::after
+					display: block
+					color: $mainColor
+		.reply
+			padding: 30px 50px
+			background: #fff
+			border-radius: 0 0 10px 10px
+			box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2)
+			display: none
+			li
+				list-style: none
+				p
+					strong
+						font-size: 18px
+						text-transform: uppercase
+						color: #000
+				.content
+					text-transform: none
+					p
+						font-size: 16px
+					ul
+						padding-left: 20px
+						li
+							list-style: disc
+					ol
+						li
+							p
+								strong
+									text-transform: none
+	.form-faq
+		background: #fafafa
+		padding: 60px 100px
+		.text-form
+			margin: 25px 0

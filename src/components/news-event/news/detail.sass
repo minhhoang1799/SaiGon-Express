@@ -1,0 +1,98 @@
+.main-news-title
+	padding-bottom: 15px
+	border-bottom: 1px solid #f3f3f3
+	.title-detail
+		font-size: 24px
+		color: $mainColor
+	.date-share
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin-top: 15px
+		.date
+			time
+				font-size: 14px
+				color: #999
+		.share-social
+			display: flex
+			align-items: center
+			li
+				width: 35px
+				height: 20px
+				text-align: center
+				margin: 0 5px
+				a
+					color: #fff
+				&:first-child
+					background: #3853a1
+				&:last-child
+					background: #00a7f7
+.news-detail
+	background: #fff
+	.full-content
+		padding: 35px 0
+		border-bottom: 1px solid #f3f3f3
+	.main-title
+		text-transform: none
+		font-size: 24px
+		font-weight: 500
+		&.line
+			&:before
+				width: 100px
+				left: 0
+				transform: translateX(0)
+.list-news-service
+	li
+		display: flex
+		align-items: center
+		border-bottom: 1px solid #f3f3f3
+		padding: 20px 0
+		.image
+			width: 75px
+			height: 75px
+			img
+				width: 100%
+				height: 100%
+		.title
+			padding: 0 20px
+			font-size: 14px
+			font-weight: 700
+			text-transform: uppercase
+			@media (min-width: 1025px)
+				&:hover
+					color: $mainColor
+	.news-form
+		.title
+			display: flex
+			align-items: center
+			justify-content: center
+			background: $mainColor
+			padding: 15px 0
+			em
+				font-size: 18px
+				color: #ffffff
+				margin-right: 5px
+			p
+				font-size: 18px
+				color: #ffffff
+				text-transform: uppercase
+				font-weight: 700
+				margin: 0
+		.form
+			background: #ffffff
+			box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2)
+			padding: 30px
+	.news-orther
+		.main-title
+			margin-bottom: 30px
+		.news-child
+			.image
+				@media (min-width: 1025px)
+					width: 100%
+					height: 273px
+					img
+						height: 100%
+			.content
+				padding: 15px 10px
+				p
+					margin-top: 15px

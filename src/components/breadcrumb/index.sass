@@ -1,0 +1,72 @@
+.global-breadcrumb
+	background: #fdfdfd
+	position: relative
+	z-index: 1
+	height: 40px
+	padding: 10px 0
+	@media screen and(max-width:500px)
+		display: none
+	ol
+		white-space: nowrap
+		padding: 0
+		list-style-type: none
+		li
+			display: inline-flex
+			font-size: 16px
+			line-height: 23px
+			position: relative
+			@apply px-4
+			&:after
+				@apply text-grey-2 bg-grey-2 block absolute
+				content: ''
+				font-size: 16px
+				width: 1px
+				height: 16px
+				right: -2px
+				bottom: 2px
+			&:first-child
+				@apply pl-0
+				span
+					display: none
+				&:after
+					bottom: -3px
+					right: -4px
+				a
+					height: 16px
+					display: inline
+					width: 16px
+					position: relative
+					&:before
+						font-family: "Material Design Icons"
+						content: '\F02DC'
+						font-size: 20px
+						@apply text-grey-2
+						position: absolute
+						width: 1px
+						bottom: -5px
+						left: 0
+			&:last-child
+				&:after
+					display: none
+			&.active
+				@apply text-grey-2
+			a
+				text-decoration: none
+				font-size: 16px
+				line-height: 23px
+				@apply text-grey-2 
+	@media screen and(max-width: 1200px)
+		padding: 10px 0
+		margin-bottom: 0
+	@media screen and(max-width: 768px)
+		margin-bottom: 0
+	@media screen and(max-width: 576px)
+		.breadcrumb
+			li
+				font-size: 14px
+				line-height: 22px
+				a
+					font-size: 13px
+					line-height: 22px
+					span
+						font-size: 13px

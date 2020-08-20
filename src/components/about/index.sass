@@ -1,0 +1,324 @@
+.item-wrapper
+	position: relative
+	&::before
+		content: ''
+		display: none
+		background-image:  url('../img/about/before.png')
+		position: absolute
+		top: 10px
+		right: 10px
+		width: 25px
+		height: 25px
+		z-index: 2
+	&::after
+		content: ''
+		display: none
+		background-image:  url('../img/about/after.png')
+		position: absolute
+		bottom: 10px
+		left: 10px
+		width: 25px
+		height: 25px
+	.image-transport
+		position: relative
+		width: 100%
+		img
+			width: 100%
+		&:before
+			content: ''
+			display: none
+			width: 100%
+			height: 100%
+			background: rgba(0, 0, 0, .5)
+			position: absolute
+	.content-wrapper
+		position: absolute
+		bottom: 0
+		left: 50%
+		width: 100%
+		transform: translate(-50%,-50%)
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-direction: column
+		.icon
+			display: none
+		.title
+			margin-top: 15px
+			color: #fff
+			font-size: 18px
+			font-weight: 700
+			text-transform: uppercase
+		.button
+			// display: none
+			margin-top: 35px
+			color: #fff
+			border-bottom: 1px solid rgba(255, 255, 255, 0)
+			&:hover
+				border-bottom: 1px solid #fff
+	@media (min-width: 1025px)
+		cursor: pointer
+		.button
+			display: none
+		&:hover
+			.image-transport
+				&::before
+					display: block
+			&::before
+				display: block
+			&::after
+				display: block
+			.content-wrapper
+				top: 50%
+				.icon
+					display: block
+				.button
+					display: block
+.item-child
+	border-radius: 25px
+	padding: 80px 60px 60px 60px
+	border: 1px solid #d1d1d1
+	position: relative
+	margin-top: 85px
+	height: 100%
+	.image
+		position: absolute
+		top: 0
+		left: 50%
+		transform: translate(-50%,-50%)
+		width: 110px
+		height: 110px
+		border-radius: 50%
+		background: $mainColor
+		display: flex
+		justify-content: center
+		align-items: center
+	.title
+		font-size: 18px
+		font-weight: 700
+		text-transform: uppercase
+		margin-top: 25px
+	.content
+		margin-top: 35px
+		p
+			font-size: 14px
+			margin: 0
+		@media (min-width: 1025px)
+			display: -webkit-box
+			-webkit-line-clamp: 3
+			-webkit-box-orient: vertical 
+			overflow: hidden
+.child
+	.item
+		padding: 80px 30px 60px 30px
+		margin-top: 55px
+		.title
+			width: max-content
+			margin-top: 0
+.about-wrapper
+	.tong-quan
+		+bg-global
+		.image
+			width: 100%
+			height: 100%
+		.content
+			max-height: 50%
+			padding-right: 35px
+			font-size: 14px
+		::-webkit-scrollbar
+                width: 2.5px
+		::-webkit-scrollbar-thumb
+			height: 120px
+			background: $mainColor
+		::-webkit-scrollbar-track
+			background: #e1e1e1
+		@media (min-width: 1025px)
+			.content
+				padding-right: 75px
+	.giai-phap
+		.main-slide
+			position: relative
+			margin-top: 45px
+			.swiper-prev,.swiper-next
+				display: none !important
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				width: 40px
+				height: 40px
+				background: #ffffff
+				cursor: pointer
+				border-radius: 50%
+				display: flex
+				justify-content: center
+				align-items: center
+				em
+					font-size: 24px
+					color: #999999
+			.swiper-prev
+				left: -5%
+			.swiper-next
+				right: -5%
+			@media (min-width: 1025px)
+				.swiper-prev,.swiper-next
+					display: flex !important
+					&:hover
+						background: $mainColor
+						em
+							color: #fff
+	.tam-nhin
+		.content
+			margin-top: 55px
+			padding-right: 8.33%
+			max-height: 350px
+			.decs
+				color: $mainColor
+				font-size: 18px
+				font-weight: 500
+			p
+				margin-top: 20px
+				display: flex
+				flex-direction: column
+				span
+					margin-top: 25px
+					position: relative
+					em
+						font-size: 10px
+						color: #666
+						margin-right: 10px
+		::-webkit-scrollbar
+                width: 2.5px
+		::-webkit-scrollbar-thumb
+			height: 120px
+			background: $mainColor
+		::-webkit-scrollbar-track
+			background: #e1e1e1
+		.image
+			padding: 10px 10px 20px 20px
+			width: 100%
+			height: 100%
+			position: relative
+			img
+				position: relative
+				z-index: 2
+				width: 100%
+				height: 100%
+			&::before
+				content: ''
+				position: absolute
+				top: 0
+				right: 0
+				width: 100px
+				height: 100px
+				background: $mainColor
+			&::after
+				content: ''
+				position: absolute
+				bottom: 0
+				left: 0
+				width: 250px
+				height: 250px
+				background: $mainColor
+	.su-menh
+		background-image: url(../img/about/4.png)
+		background-size: cover
+		background-position: center center
+		padding: 70px 0
+		.icon
+			margin-bottom: 40px	
+		.main-title
+			color: #fff
+			margin-bottom: 35px
+		.content
+			padding: 0 16.67%
+			p
+				color: #fff
+				font-size: 14px
+	.gia-tri
+		.doanh-nghiep
+			display: flex
+			align-items: center
+			.image
+				padding: 10px
+				position: relative
+				img
+					z-index: 2
+					position: relative
+				&::before
+					content: ''
+					position: absolute
+					width: 220px
+					height: 150px
+					background: $mainColor
+					left: 0
+					top: 0
+					z-index: 1
+			.content
+				margin-top: 30px
+				p
+					font-size: 14px
+					margin-bottom: 25px
+	.doi-tac
+		background: #ebebeb
+		.container
+			position: relative
+			.text
+				font-size: 14px
+				margin: 30px 0
+			.image
+				width: 195px
+				height: 100px
+				background: #fff
+				display: flex
+				justify-content: center
+				align-items: center
+			.button-slide
+				position: absolute
+				top: 10%
+				right: 5%
+				transform: translate(-50%,-50%)
+				display: flex
+				align-items: center
+				.swiper-prev,.swiper-next
+					width: 40px
+					height: 40px
+					background: #ffffff
+					margin: 0 5px
+					cursor: pointer
+					border-radius: 50%
+					display: flex
+					justify-content: center
+					align-items: center
+					em
+						font-size: 24px
+						color: #999999
+.giaiphap-popup
+	margin: 0 16.67%
+	padding: 30px 25px
+	.fancybox-button
+		width: 30px
+		height: 30px
+		background: $mainColor
+		display: flex
+		justify-content: center
+		align-items: center
+		svg
+			color: #fff
+			width: 24px
+			height: 24px
+	.row
+		align-items: center
+		.img-popup
+			width: 100%
+			height: 100%
+			img
+				width: 100%
+				height: 100%
+		.title
+			font-weight: 700
+			font-size: 18px
+			margin-bottom: 30px
+		.decs
+			font-size: 14px
+			@media (min-width: 1025px)
+				padding-right: 55px

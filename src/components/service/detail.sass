@@ -1,0 +1,318 @@
+.title-sv
+	background: #ebebeb
+	padding: 10px
+	width: 100%
+	font-size: 16px
+	text-align: center
+	font-weight: 700
+	text-transform: uppercase
+	@media (min-width: 1025px)
+		text-align: left
+		font-size: 20px
+		width: max-content
+		padding-right: 50px
+		clip-path: polygon(0 0, 100% 0, 92% 100%, 0% 100%)
+.content-sv
+	.title
+		font-weight: 800
+		font-size: 16px
+		text-transform: uppercase
+	p
+		margin-top: 30px
+		font-size: 14px
+		span
+			font-weight: 700
+.service-1
+	.line
+		&::before
+			left: 0
+			transform: translateX(0)
+	.content-sv
+		@media (min-width: 1025px)
+			padding-right: 50px
+	a
+		width: 100%
+		height: 100%
+		.image
+			width: 100%
+			height: 100%
+			position: relative
+			img
+				position: relative
+				z-index: 2
+				width: 100%
+				height: 100%
+			&::before
+				content: url('../img/icon/play.png')
+				position: absolute
+				z-index: 3
+				top: 50%
+				left: 50%
+				transform: translate(-50%,-50%)
+			&::after
+				content: ''
+				position: absolute
+				width: 140px
+				height: 140px
+				background: $mainColor
+				bottom: -10px
+				left: -10px
+.service-2
+	.contact-form
+		background: #fff
+		border-radius: 10px
+.service-4
+	background: #ebebeb
+	.title-sv
+		padding: 0
+		clip-path: none
+	p
+		font-size: 14px
+		margin: 25px 0
+	.combo
+		display: flex
+		flex-direction: column
+		.image
+			height: 100%
+			img
+				width: 100%
+				height: 100%
+		.desc
+			background: $mainColor
+			padding: 40px 25px
+			h5
+				color: #ffffff
+				text-transform: uppercase
+				font-size: 16px
+				font-weight: 700
+			p
+				color: #fff
+		@media (min-width: 1025px)
+			flex-direction: row
+			.image
+				width: 50%
+				img
+					width: 100%
+					height: 400px
+			.desc
+				width: 50%
+				padding: 60px 45px
+	.swiper-container
+		position: relative
+		.swiper-prev,.swiper-next
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			z-index: 10
+			em
+				font-size: 48px
+				color: #fff
+		.swiper-prev
+			left: -5%
+		.swiper-next
+			right: -5%
+		@media (min-width: 1025px)
+			.swiper-prev
+				left: 0
+			.swiper-next
+				right: 0
+	.content-sv
+		span
+			text-transform: uppercase
+.service-5
+	.title-child
+		padding: 35px 0
+	.step-wrapper
+		background: #ffffff
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+		border-radius: 25px
+		height: 190px
+		overflow: hidde
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1)
+		.step
+			flex: 0 0 30%
+			max-width: 30%
+			width: 100%
+			height: 100%
+			padding: 0 40px
+			background-image: url(../img/icon/sv2.png)
+			background-size: cover
+			background-position: center center
+			display: flex
+			justify-content: center
+			flex-direction: column
+			p
+				margin-top: 15px
+				font-size: 18px
+				font-weight: 800
+				text-transform: uppercase
+				color: #fff
+				text-shadow: 2px 2px 2px rgba(0,0,0, .5)
+		.content-sv
+			flex: 0 0 70%
+			max-width: 70%
+			padding: 40px 30px
+			height: 100%
+			.title
+				margin-bottom: 15px
+			p
+				margin: 0
+		@media (max-width: 767px)
+			height: 100%
+			overflow: hidden
+			flex-wrap: nowrap
+			flex-direction: column
+			.step
+				padding: 0
+				align-items: center
+				flex-direction: row
+				max-width: 100%
+				background-image: none
+				background: $mainColor
+				p
+					margin-left: 10px
+			.content-sv
+				max-width: 100%
+.service-6
+	.list
+		margin-top: 30px
+		background: #ffffff
+		border-radius: 10px
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2)
+		padding: 30px
+		height: 100%
+		.content-sv
+			.title
+				font-size: 14px
+				margin: 30px 0 20px 0
+			p
+				margin: 5px 0
+.service-7
+	.title
+		font-weight: 700
+		font-size: 14px
+		text-transform: uppercase
+		margin: 30px 0
+	.view-detail
+		display: flex
+		align-items: center
+		margin-top: 30px
+		em
+			font-size: 24px
+			margin-right: 5px
+		p
+			font-size: 14px
+			margin: 0
+		a
+			color: #24aaff
+			font-size: 14px
+			margin-left: 5px
+			@media (min-width: 1025px)
+				border-bottom: 1px solid rgba(0, 0, 0, 0)
+				&:hover
+					border-bottom: 1px solid #24aaff
+.service-8
+	background: #fff
+	position: relative
+	.title-sv
+		@media (min-width: 1025px)
+			position: absolute
+			top: -25px
+	.slide-sv
+		position: relative
+		.swiper-prev,.swiper-next
+			display: none
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			width: 40px
+			height: 40px
+			border: 1px solid #ebebeb
+			border-radius: 50%
+			display: flex
+			justify-content: center
+			align-items: center
+			em
+				font-size: 24px
+				color: #999
+		.swiper-prev
+			left: -5%
+		.swiper-next
+			right: -5%
+		@media (min-width: 1025px)
+			.swiper-prev,.swiper-next
+				display: flex
+	.description
+		margin-top: 30px
+		ul
+			margin-top: 20px
+			.link
+				display: flex
+				align-items: center
+				margin: 10px 0
+				p
+					margin: 0
+				em
+					font-size: 24px
+					color: $mainColor
+					margin: 0 5px
+				a
+					color: #24aaff
+					font-size: 14px
+					margin-left: 5px
+					@media (min-width: 1025px)
+						border-bottom: 1px solid rgba(0, 0, 0, 0)
+						&:hover
+							border-bottom: 1px solid #24aaff
+		.hotline
+			margin-top: 30px
+			a
+				font-size: 14px
+				font-weight: 700
+				span
+					font-size: 18px
+					color: $mainColor
+					font-weight: 700
+.hotline-number
+	display: flex
+	align-items: center
+	flex-direction: column
+	justify-content: center
+	.button
+		display: flex
+		align-items: center
+		margin: 10px 0
+		.icon
+			z-index: 2
+			width: 65px
+			height: 65px
+			border: 2px solid #ffffff
+			border-radius: 50%
+			background: $mainColor
+			display: flex
+			justify-content: center
+			align-items: center
+			em
+				font-size: 30px
+				color: #fff
+		.box
+			width: 200px
+			height: 40px
+			margin-left: -40px
+			background: $mainColor
+			display: flex
+			justify-content: center
+			align-items: center
+			border-radius: 5px
+			p
+				color: #fff
+				font-weight: 700
+	@media (min-width: 1025px)
+		flex-direction: row
+		justify-content: flex-start
+		.button
+			margin: 0 
+			&:last-child
+				margin-left: 10px
