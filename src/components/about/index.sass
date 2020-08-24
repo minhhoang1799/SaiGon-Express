@@ -122,15 +122,19 @@
 			width: max-content
 			margin-top: 0
 .about-wrapper
+	.nav-child
 	.tong-quan
 		+bg-global
 		.image
 			width: 100%
 			height: 100%
 		.content
-			max-height: 50%
+			max-height: 200px
 			padding-right: 35px
 			font-size: 14px
+			@apply leading-relaxed
+			*
+				@apply mb-2
 		::-webkit-scrollbar
                 width: 2.5px
 		::-webkit-scrollbar-thumb
