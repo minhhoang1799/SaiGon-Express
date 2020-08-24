@@ -1,6 +1,6 @@
 .wrap-form
 	.form-group
-		input,textarea
+		input,textarea,select
 			border: 1px solid #ebebeb
 			border-radius: 10px
 			padding: 0 20px
@@ -12,20 +12,18 @@
 			height: 8rem
 		input
 			height: 50px
+.frm-btn-reset
+	display: none !important
 .frm-btnwrap
 	display: block
 	bottom: 0
 	margin: 0 !important
 	max-width: 190px
-	position: absolute
-	bottom: 0
-	right: 0
 	label
 		display: none
 	.frm-btn
 		input[type='submit']
 			@apply font-normal text-white inline-block px-16 py-2 cursor-pointer
-			border-radius: 22px
 			background: $main
 			height: 50px
 .frm-captcha

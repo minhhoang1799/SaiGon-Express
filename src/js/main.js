@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
 	//Declare normal variable javascript
 	//Hide element when smaller than 1025
@@ -32,10 +31,16 @@ $(document).ready(function () {
 	toggleFaq()
 	menuToggle();
 	toggleBox();
+	appendFormHome();
 
 });
 
-
+function appendFormHome() {
+	if ($(".home-guide-form").length) {
+		$('.home-guide-form').appendTo('.services-form .form-wrapper');
+			
+	}
+}
 
 
 function toggleSearch() {
@@ -393,105 +398,105 @@ function toggleMobileMenu() {
 }
 
 //swiper
-function slideGlobal(){
+function slideGlobal() {
 	var swiper = new Swiper('.giai-phap .swiper-container', {
 		slidesPerView: 3,
 		spaceBetween: 10,
 		autoplay: true,
 		speed: 1000,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.giai-phap .swiper-next',
-            prevEl: '.giai-phap .swiper-prev',
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: false,
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
+		navigation: {
+			nextEl: '.giai-phap .swiper-next',
+			prevEl: '.giai-phap .swiper-prev',
 		},
 		breakpoints: {
-            1024: {
-                slidesPerView: 2,
-            },
-            575: {
-                slidesPerView: 1,
-            }
-        }
-    });
+			1024: {
+				slidesPerView: 2,
+			},
+			575: {
+				slidesPerView: 1,
+			}
+		}
+	});
 	var DoiTac = new Swiper('.doi-tac .swiper-container', {
 		slidesPerView: 6,
 		spaceBetween: 10,
 		autoplay: true,
 		speed: 1000,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.doi-tac .swiper-next',
-            prevEl: '.doi-tac .swiper-prev',
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: false,
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
+		navigation: {
+			nextEl: '.doi-tac .swiper-next',
+			prevEl: '.doi-tac .swiper-prev',
 		},
 		breakpoints: {
-            1024: {
-                slidesPerView: 4,
-            },
-            767: {
-                slidesPerView: 3,
+			1024: {
+				slidesPerView: 4,
+			},
+			767: {
+				slidesPerView: 3,
 			},
 			576: {
 				slidesPerView: 2,
 			}
-        }
-    });
+		}
+	});
 	var DoiTac2 = new Swiper('.home-h6 .swiper-container', {
 		slidesPerView: 4,
 		spaceBetween: 10,
 		autoplay: true,
 		slidesPerColumn: 2,
 		speed: 1000,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.home-h6 .swiper-next',
-            prevEl: '.home-h6 .swiper-prev',
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: false,
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
+		navigation: {
+			nextEl: '.home-h6 .swiper-next',
+			prevEl: '.home-h6 .swiper-prev',
 		},
 		breakpoints: {
-            1024: {
-                slidesPerView: 4,
-            },
-            767: {
-                slidesPerView: 3,
+			1024: {
+				slidesPerView: 4,
+			},
+			767: {
+				slidesPerView: 3,
 			},
 			576: {
 				slidesPerView: 2,
 			}
-        }
-    });
+		}
+	});
 }
-function toggleFaq(){
-    var toggleFaqD = $('.list-question .question-wrapper')
-    toggleFaqD.on('click', function(){
-        toggleFaqD.find('.reply').slideUp(500)
-        if($(this).hasClass('active')){
-            $(this).removeClass('active')
-            $(this).find('.reply').slideUp(500)
-        }
-        else{
-            toggleFaqD.removeClass('active')
-            $(this).addClass('active')
-            $(this).find('.reply').slideDown(500)
-        }
-    })
+
+function toggleFaq() {
+	var toggleFaqD = $('.list-question .question-wrapper')
+	toggleFaqD.on('click', function () {
+		toggleFaqD.find('.reply').slideUp(500)
+		if ($(this).hasClass('active')) {
+			$(this).removeClass('active')
+			$(this).find('.reply').slideUp(500)
+		} else {
+			toggleFaqD.removeClass('active')
+			$(this).addClass('active')
+			$(this).find('.reply').slideDown(500)
+		}
+	})
 }
