@@ -2,7 +2,7 @@
 	position: relative
 	&::before
 		content: ''
-		display: none
+	
 		background-image:  url('../img/about/before.png')
 		position: absolute
 		top: 10px
@@ -10,27 +10,29 @@
 		width: 25px
 		height: 25px
 		z-index: 2
+		@apply transition opacity-0
 	&::after
 		content: ''
-		display: none
 		background-image:  url('../img/about/after.png')
 		position: absolute
 		bottom: 10px
 		left: 10px
 		width: 25px
 		height: 25px
+		@apply transition opacity-0
 	.image-transport
 		position: relative
 		width: 100%
+		@apply transition
 		img
 			width: 100%
 		&:before
 			content: ''
-			display: none
 			width: 100%
 			height: 100%
 			background: rgba(0, 0, 0, .5)
 			position: absolute
+			@apply transition opacity-0
 	.content-wrapper
 		position: absolute
 		bottom: 0
@@ -41,8 +43,10 @@
 		justify-content: center
 		align-items: center
 		flex-direction: column
+		@apply transition
 		.icon
-			display: none
+			opacity: 0
+			@apply transition
 		.title
 			margin-top: 15px
 			color: #fff
@@ -50,7 +54,6 @@
 			font-weight: 700
 			text-transform: uppercase
 		.button
-			// display: none
 			margin-top: 35px
 			color: #fff
 			border-bottom: 1px solid rgba(255, 255, 255, 0)
@@ -59,21 +62,22 @@
 	@media (min-width: 1025px)
 		cursor: pointer
 		.button
-			display: none
+			opacity: 0
+			@apply transition
 		&:hover
 			.image-transport
 				&::before
-					display: block
+					opacity: 1
 			&::before
-				display: block
+				opacity: 1
 			&::after
-				display: block
+				opacity: 1
 			.content-wrapper
 				top: 50%
 				.icon
-					display: block
+					opacity: 1
 				.button
-					display: block
+					opacity: 1
 .item-child
 	border-radius: 25px
 	padding: 80px 60px 60px 60px
@@ -100,8 +104,10 @@
 		margin-top: 25px
 	.content
 		margin-top: 35px
+		@apply leading-relaxed
 		p
 			font-size: 14px
+			@apply leading-relaxed
 			margin: 0
 		@media (min-width: 1025px)
 			display: -webkit-box

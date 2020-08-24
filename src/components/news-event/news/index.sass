@@ -3,11 +3,9 @@
 	.news-wrapper
 		position: relative
 		.image
-			width: 100%
-			height: 100%
-			img
-				width: 100%
-				height: 100%
+			@apply bg-white
+			a
+				+img-ratio(600/600)
 		.content
 			position: absolute
 			bottom: 0
@@ -22,8 +20,6 @@
 				margin-top: 15px
 				font-size: 14px
 		@media (min-width: 1025px)
-			.image
-				height: 600px
 			.content
 				padding: 30px
 				width: 65%
@@ -40,33 +36,58 @@
 					overflow: hidden
 	.list-news
 		.item-news
+			&:last-child
+				@apply mb-0
 			.image
-				width: 100%
-				img
-					width: 100%
+				flex: 1 0 auto
+				@apply bg-white
+				a
+					@apply bg-white
+					display: block
+					height: 180px
+					max-width: 180px
+					min-width: 180px
+					width: auto
+					@media screen and ( max-width: 1280px)
+						height: 140px
+						max-width: 140px
+						min-width: 140px
+						
+					img
+						width: 100%
+						height: 100%
+						object-fit: contain
 			.content
 				padding: 15px
 				.title
 					font-size: 16px
 					font-weight: 700
 					text-transform: uppercase
+					@media screen and ( max-width: 1280px)
+						font-size: 14px 
+						
 				p
 					margin-top: 15px
 					font-size: 14px
+					display: -webkit-box
+					-webkit-line-clamp: 3
+					-webkit-box-orient: vertical
+					overflow: hidden
+					@apply leading-relaxed
+					@media screen and ( max-width: 1280px)
+						@apply mt-2
+					
 			@media (min-width: 768px)
 				display: flex
 				align-items: center
 				margin-bottom: 30px
-				.image
-					width: 180px
-					height: 180px
+				
 				.content
 					padding: 0 30px
 					width: 65%
 					.title
 						font-size: 18px
 					p
-						margin-top: 30px
 						font-size: 14px
 			@media (min-width: 1025px)
 				.content
@@ -77,9 +98,10 @@
 						display: -webkit-box
 .news-child
 	.image
-		width: 100%
-		img
-			width: 100%
+		@apply bg-white
+		a
+			@apply bg-white
+			+img-ratio(390/390,contain)
 	.content
 		padding: 15px
 		border: 1px solid #ebebeb
@@ -91,15 +113,19 @@
 			margin-top: 15px
 			font-size: 14px
 	@media (min-width: 1025px)
-		.image
-			height: 390px
+		
 		.content
 			padding: 30px
 			.title
 				font-size: 18px
+				display: -webkit-box
+				-webkit-line-clamp: 2
+				-webkit-box-orient: vertical
+				overflow: hidden
 				&:hover
 					color: $mainColor
 			p
+				@apply leading-relaxed
 				margin-top: 30px
 				font-size: 14px
 				display: -webkit-box
