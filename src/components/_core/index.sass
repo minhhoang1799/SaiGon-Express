@@ -124,10 +124,11 @@
 		&:checked
 			background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ec1f27' width='18px' height='18px'><path d='M0 0h24v24H0z' fill='none'/><path d='M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/></svg>")
 .main-title
-	font-size: 36px
+	@apply text-28 mb-8
 	font-weight: 800
 	text-transform: uppercase
-	padding-bottom: 10px
+	@screen lg
+		@apply text-36
 	&.line
 		position: relative
 		&::before
@@ -140,10 +141,12 @@
 			height: 2px
 			background: $mainColor
 .title-child
-	font-size: 35px
+	@apply text-28 mb-8
 	text-transform: uppercase
 	font-weight: 800
 	color: $mainColor
+	@screen lg
+		@apply text-36
 .main-line
 	padding: 50px 0
 .main-child

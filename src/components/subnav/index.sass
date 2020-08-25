@@ -9,7 +9,7 @@
 			a
 				@apply underline
 		a
-			@apply flex items-center justify-center uppercase px-4 text-14
+			@apply flex items-center justify-center uppercase px-4 text-14 whitespace-no-wrap
 			height: 35px
 			text-transform: uppercase
 			border: 1px solid #ebebeb
@@ -20,4 +20,12 @@
 				@apply bg-primary text-white 
 				border: 1px solid transparent
 
+.about-us-section
+	.sub-nav
+		.container
+			@apply overflow-x-auto flex justify-start items-center
 		
+
+	.nav-child
+		background: #FDFDFD
+		@apply whitespace-no-wrap

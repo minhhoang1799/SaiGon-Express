@@ -7,16 +7,23 @@
 		color: #ffffff
 	.gallery-top
 		width: 100%
-		padding-top: 4rem
 		margin-bottom: 4rem
 		position: relative
+		@media screen and ( max-width: 1024px)
+			@apply mb-8
+			
 		.swiper-wrapper
 			.swiper-slide
 				.swiper-content
 					display: flex
 					align-items: stretch
+					@media screen and ( max-width: 767px)
+						@apply flex-col
+						
 					.box-img
 						width: 40%
+						@media screen and ( max-width: 767px)
+							@apply w-full
 						img
 							width: 100%
 							height: 100%
@@ -24,10 +31,19 @@
 					.box-content
 						width: 60%
 						background: #ffffff
+						@media screen and ( max-width: 767px)
+							@apply w-full
 						.content
 							padding: 40px 30px 145px
+							@apply leading-relaxed
+							@media screen and ( max-width: 1280px)
+								padding: 40px 40px 70px 40px
+								
 							.call-icon
 								margin-bottom: 40px
+								@media screen and ( max-width: 1024px)
+									@apply mb-6
+									
 								img
 									max-width: 40px
 									height: auto
@@ -137,14 +153,51 @@
 		background: #ffffff
 		position: relative
 		height: 100%
+		@media screen and ( max-width: 1024px)
+			@apply mb-12
+			
+		.wrap-form
+			padding: 50px 30px 40px 30px
+			background: #ffffff
+			width: 100%
 		.form-wrapper
-			box-shadow: inset 0 8px 0 #e80707
 			position: absolute
 			height: calc( 100% + 90px)
 			left: 0
 			bottom: 0
-			background: #ffffff
 			width: 100%
+			border-top: 8px solid #e80707
+			@media screen and ( max-width: 1024px)
+				@apply static 
+				
+		.form-group
+			@apply mb-2
+		input,select,textarea
+			@apply w-full pl-0
+			border-radius: 0
+			border: none
+			border-bottom: 1px solid #d7d7d7
+			@apply text-14
+			&::placeholder
+				@apply text-14 text-main
+		select
+			@apply pb-4
+		textarea
+			height: 5rem
+		.text
+			@apply text-18 font-light text-main leading-relaxed mb-4
+		p
+			@apply font-bold mb-4
+		.frm-btn
+			margin-top: 30px
+			@media screen and ( max-width: 1024px)
+				margin-top: 20px
+				
+			input
+				width: 200px
+				height: 50px
+				@apply bg-primary text-white uppercase flex items-center justify-center
+				
 .feature-section
 	background: #fbfafb
 	.main-title

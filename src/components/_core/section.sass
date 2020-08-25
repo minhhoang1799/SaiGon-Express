@@ -1,8 +1,7 @@
-
 .frm-captcha
 	margin: 15px 0 0 0 !important
 	display: inline-flex
-	flex-direction: row
+	flex-direction: row-reverse
 	img
 		height: 45px !important
 		max-width: auto
@@ -36,11 +35,10 @@
 		cursor: pointer
 		height: 0
 		width: 0
-		left: -5px
-		top: -5px
+		left: 100%
+		top: 0
 		color: #ffffff
 		z-index: 0
-		font-size: 0
 		&:before
 			font-family: 'Material Design Icons'
 			position: absolute
@@ -50,7 +48,7 @@
 			z-index: 99
 			color: #9d9080
 			font-size: 30px
-			content: "\F0450"
+			content: "\F0459"
 			display: flex
 			justify-content: center
 			align-items: flex-start
@@ -61,7 +59,7 @@
 		display: none
 #ctl00_mainContent_ctl02_captcha_ctl01
 	position: relative
-#ctl00_mainContent_ctl06_btnReset,#ctl00_mainContent_ctl05_captcha_ctl00,#ctl00_mainContent_ctl08_captcha_ctl00,#ctl00_mainContent_ctl07_captcha_ctl00
+#ctl00_mainContent_ctl06_btnReset,#ctl00_mainContent_ctl05_captcha_ctl00
 	display: none
 #ctl00_mainContent_ctl06_txtCaptcha
 	margin-left: 10px
@@ -69,6 +67,7 @@
 	#text
 		display: none
 .RadCaptcha
+	margin-right: 50px
 	@media screen and ( max-width:767.5px)
 		margin-left: 0
 	>div
@@ -76,9 +75,7 @@
 			display: flex
 			position: relative
 			flex-direction: column-reverse
-			padding-left: 40px
-			height: 40px !important
-			margin-top: 10px
+			height: 35px !important
 			@media (max-width: 767.98px)
 				margin-right: 0
 				width: 180px
