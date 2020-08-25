@@ -3,9 +3,66 @@ section.transport.main-line
 		h2.main-title.line.text-center chuyển nhà, văn phòng, kho xưởng trọn gói
 		.row
 			.col(class="w-full lg:w-5/12")
-				.form-transport
+				.form-wrapper
+					.form-transport
+						.form-group
+							label(for="") Nhập địa điểm
+							input(type="text", name="")
+						.form-group
+							label(for="") Nhập địa điểm
+							input(type="text", name="")
+						.form-group
+							label(for="") Chọn loại dịch vụ
+							.form-checked
+								.checked
+									input(type="radio", name="service", id="1")
+									label(for="1") Chuyển nhà
+								.checked
+									input(type="radio", name="service", id="2")
+									label(for="2") Chuyển văn phòng
+								.checked
+									input(type="radio", name="service", id="3")
+									label(for="3") Chuyển dời nhà xưởng
+								.checked
+									input(type="radio", name="service", id="4")
+									label(for="4") Khác
+						.form-group
+							label(for="") Chọn loại xe tải
+							.form-checked.form-2
+								.checked
+									input(type="radio", name="service", id="5")
+									label(for="5") 500kg
+								.checked
+									input(type="radio", name="service", id="6")
+									label(for="6") 750kg
+								.checked
+									input(type="radio", name="service", id="7")
+									label(for="7") 1.5 tấn
+								.checked
+									input(type="radio", name="service", id="8")
+									label(for="8") 1.9 tấn
+								.checked
+									input(type="radio", name="service", id="9")
+									label(for="9") 2 tấn (thùng 6 kg)
+						.form-group
+							.btn-search
+								a.button(href="#") Tra cứu
+					.total
+						.infomation
+							p Số km:
+								span  11,9km
+							p Loại xe:
+								span  500kg
+						.payment
+							p Tạm tính
+							p.total-money 415.000 VNĐ
+						.note
+							p *
+								|
+								i Giá trên chỉ mang tính chất tham khảo. Chưa bao gồm các loại chi phí khác (nếu có)
 			.col(class="w-full lg:w-7/12")
 				.map
+					img(src="./img/transport/4.png", alt="")
 section.transport-2.main-line
 	.container
 		h2.main-title.line.text-center liên hệ

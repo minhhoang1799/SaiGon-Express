@@ -1,5 +1,112 @@
-.transsport
-	
+.transport
+	.form-wrapper
+		border: 1px solid #e1e1e1
+		padding: 40px
+		margin-top: 30px
+		@media (min-width: 1025px)
+			margin-right: -15px
+		.form-transport
+			.form-group
+				display: flex
+				flex-direction: column
+				label
+					font-weight: 700
+					margin: 15px 0
+				input[type=text]
+					width: 100%
+					height: 40px
+					background: #f5f5f5
+					border-radius: 5px
+					padding: 5px 20px
+					@media (min-width: 1025px)
+						height: 50px
+				.btn-search
+					margin-top: 30px
+					.button
+						padding: 10px 60px
+						background: $mainColor
+						color: #ffffff
+						text-transform: uppercase
+						font-weight: 700
+				.form-checked
+					display: flex
+					flex-wrap: wrap
+					.checked
+						flex: 0 0 50%
+						max-width: 50%
+						margin: 5px 0
+						input
+							display: none
+						label
+							position: relative
+							font-weight: 400
+							&::before
+								content: '\F0130'
+								font: normal normal normal 24px/1 "Material Design Icons"
+								font-size: 16px
+								margin-right: 10px
+						input:checked ~ label
+							&::before
+								content: '\F043E'
+								color: $mainColor
+					// &.form-2
+					// 	.checked
+					// 		flex: 0 0 calc(100%/3)
+					// 		max-width: calc(100%/3)
+					// 		width: max-content
+				&:first-child
+					label
+						&::before
+							content: '\F034E'
+							font: normal normal normal 24px/1 "Material Design Icons"
+							font-size: 18px
+							color: $mainColor
+				&:nth-child(2)
+					label
+						&::before
+							content: '\F034E'
+							font: normal normal normal 24px/1 "Material Design Icons"
+							font-size: 18px
+							color: #38c521
+				&:last-child
+					border-bottom: 1px solid $mainColor
+					padding-bottom: 40px
+		.total
+			padding-top: 30px
+			.note
+				p
+					color: $mainColor
+					i
+						font-size: 14px
+						color: #333
+			.infomation
+				display: flex
+				align-items: center
+				p
+					color: $mainColor
+					margin-right: 50px
+					span
+						color: #333
+			.payment
+				display: flex
+				align-items: center
+				p
+					margin-right: 20px
+				.total-money
+					padding: 10px 30px
+					background: #f3f3f3
+					font-size: 16px
+					font-weight: 700
+					color: $mainColor
+					@media (min-width: 1025px)
+						font-size: 18px
+	.map
+		width: 100%
+		height: 100%
+		img
+			height: 100%
+		@media (min-width: 1025px)
+			margin: 30px 0 0 -15px
 .transsport-2
 	.form-wrapper
 		background: #f3f3f3
@@ -76,7 +183,7 @@
 						content: '='
 				&:last-child
 					&::after
-						display: none
+						opacity: 0
 		.list-image
 			.image-child,.image-full
 				width: 100%

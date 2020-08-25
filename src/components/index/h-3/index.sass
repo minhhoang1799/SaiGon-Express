@@ -1,9 +1,11 @@
 .home-3
-	background-image: url(../img/home/bg1.png)
-	background-size: cover
-	background-position: center center
+	@media (min-width: 1025px)
+		background-image: url(../img/home/bg1.png)
+		background-size: cover
+		background-position: center center
 	.main-title
-		color: #fff
+		@media (min-width: 1025px)
+			color: #fff
 	.list-item
 		.icon
 			display: flex
@@ -13,9 +15,10 @@
 			text-align: center
 			@apply leading-relaxed
 			.decs
-				color: #ffffff
 				font-weight: 700
 				font-size: 18px
+				@media (min-width: 1025px)
+					color: #fff
 			p
 				color: #adadad
 				font-size: 14px

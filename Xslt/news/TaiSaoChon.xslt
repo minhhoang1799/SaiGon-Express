@@ -8,7 +8,7 @@
 
 	<xsl:template match="Zone">
 		<xsl:if test="position() = 1">
-			<section class="home-3section home-3 main-line">
+			<section class=" home-3 main-line">
 				<div class="container">
 					<h2 class="main-title text-center">
 						<xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
