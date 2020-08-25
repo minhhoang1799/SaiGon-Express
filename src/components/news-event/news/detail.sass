@@ -32,6 +32,9 @@
 	.full-content
 		padding: 35px 0
 		border-bottom: 1px solid #f3f3f3
+
+		*
+			@apply leading-relaxed mb-2
 	.main-title
 		text-transform: none
 		font-size: 24px
@@ -61,27 +64,7 @@
 			@media (min-width: 1025px)
 				&:hover
 					color: $mainColor
-	.news-form
-		.title
-			display: flex
-			align-items: center
-			justify-content: center
-			background: $mainColor
-			padding: 15px 0
-			em
-				font-size: 18px
-				color: #ffffff
-				margin-right: 5px
-			p
-				font-size: 18px
-				color: #ffffff
-				text-transform: uppercase
-				font-weight: 700
-				margin: 0
-		.form
-			background: #ffffff
-			box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2)
-			padding: 30px
+	
 	.news-orther
 		.main-title
 			margin-bottom: 30px
@@ -96,3 +79,42 @@
 				padding: 15px 10px
 				p
 					margin-top: 15px
+.news-form-wrapper
+	@apply mt-4 hidden
+	.title
+		@apply flex items-center justify-center bg-primary
+		padding: 15px 0
+		em
+			font-size: 18px
+			color: #ffffff
+			margin-right: 5px
+		p
+			font-size: 18px
+			color: #ffffff
+			text-transform: uppercase
+			font-weight: 700
+			margin: 0
+	.form-wrapper
+		background: #ffffff
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2)
+		padding: 20px 30px
+	.wrap-form
+		.form-group
+			input,textarea
+				height: 40px
+				border: 1px solid #f3f3f3
+				border-radius: 0
+				@apply text-14 text-main w-full
+				&:placeholder
+					@apply text-grey-2 text-14
+			textarea
+				height: 6rem
+				border-radius: 0
+		.frm-btnwrap
+			max-width: 100%
+			@apply pt-6
+			.frm-btn
+				input
+					height: 40px
+					@apply w-full
+					color: #ffffff !important

@@ -40,6 +40,11 @@ function appendFormHome() {
 		$('.home-guide-form').appendTo('.services-form .form-wrapper');
 			
 	}
+	
+		if ($(".news-form-wrapper").length) {
+			$('.news-form-wrapper').insertAfter('.news-detail-service').css({display: 'block'});
+
+		}
 }
 
 

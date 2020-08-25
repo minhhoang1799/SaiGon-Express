@@ -33,10 +33,10 @@
 				</div>
 				<div class="content">
 					<h3 class="title">
-						<xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
+						<xsl:value-of disable-output-escaping="yes" select="BriefContent"></xsl:value-of>
 					</h3>
 					<p>
-						<xsl:value-of disable-output-escaping="yes" select="FullContent"></xsl:value-of>
+						<xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
 						<xsl:value-of select="EditLink" disable-output-escaping="yes"></xsl:value-of>
 					</p>
 				</div>
