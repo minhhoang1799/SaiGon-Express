@@ -51,7 +51,7 @@
 				<xsl:value-of disable-output-escaping="yes" select="BriefContent"></xsl:value-of>
 			</td>
 			<td>
-				<xsl:value-of disable-output-escaping="yes" select="FullContent"></xsl:value-of>
+				<xsl:value-of disable-output-escaping="yes" select="EndDate"></xsl:value-of>
 			</td>
 		</tr>
 	</xsl:template>

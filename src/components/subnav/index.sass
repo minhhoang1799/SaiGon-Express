@@ -22,10 +22,38 @@
 
 .about-us-section
 	.sub-nav
+		@apply bg-white
+		box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.05)
 		.container
-			@apply overflow-x-auto flex justify-start items-center
-		
-
+			@apply overflow-x-auto flex justify-center items-center
+	.global-breadcrumb
+		@apply relative
+		margin-top: -40px
+		z-index: 9999
+		background: rgba(#000000,.3 )
+		ol
+			li
+				&:first-child 
+					a
+						&:before
+							@apply text-white
+					&::after
+						@apply bg-white
+		*
+			@apply text-white
 	.nav-child
-		background: #FDFDFD
-		@apply whitespace-no-wrap
+		background: #ffffff
+		height: 50px
+
+		@apply flex items-center mt-0 justify-center
+		li
+			@apply px-2 m-0 h-full
+			&.active
+				a
+					background: none !important
+					@apply text-main
+					border-bottom: 2px solid $primary
+			a
+				border: none
+				@apply p-0 transition bg-white h-full
+				border-bottom: 2px solid transparent

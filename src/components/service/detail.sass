@@ -13,6 +13,9 @@
 		padding-right: 50px
 		clip-path: polygon(0 0, 100% 0, 92% 100%, 0% 100%)
 .content-sv
+	@apply leading-relaxed
+	*
+		@apply leading-relaxed
 	.title
 		font-weight: 800
 		font-size: 16px
@@ -23,6 +26,8 @@
 		span
 			font-weight: 700
 .service-1
+	*
+		@apply leading-relaxed
 	.line
 		&::before
 			left: 0
@@ -58,11 +63,29 @@
 				bottom: -10px
 				left: -10px
 .service-2
+	*
+		@apply leading-relaxed
+	.wrap-form
+		padding: 0 100px
+		@media screen and ( max-width: 1024px)
+			padding: 0 40px
+				
 	.contact-form
 		background: #fff
 		border-radius: 10px
+	.main-title
+		@apply mb-8
+	.frm-btnwrap
+		@apply flex items-center justify-end pt-8
+		max-width: 100% 
+		.frm-btn
+			input
+				width: 130px
+				padding: 0
 .service-4
 	background: #ebebeb
+	*
+		@apply leading-relaxed
 	.title-sv
 		padding: 0
 		clip-path: none
@@ -156,7 +179,7 @@
 			padding: 40px 30px
 			height: 100%
 			.title
-				margin-bottom: 15px
+				margin-bottom: 10px
 			p
 				margin: 0
 		@media (max-width: 767px)
@@ -190,6 +213,19 @@
 			p
 				margin: 5px 0
 .service-7
+	padding: 50px 0 100px
+	@media screen and ( max-width: 1024px)
+		padding: 50px 0 70px 0
+		
+	.table-wrapper 
+		table 
+			thead
+				th
+					border: 1px solid #ebebeb
+			tr
+				@apply bg-white
+				td
+					border: 1px solid  #ebebeb
 	.title
 		font-weight: 700
 		font-size: 14px
@@ -246,6 +282,9 @@
 				display: flex
 	.description
 		margin-top: 30px
+		@apply leading-relaxed
+		*
+			@apply leading-relaxed
 		ul
 			margin-top: 20px
 			.link
@@ -306,9 +345,12 @@
 			justify-content: center
 			align-items: center
 			border-radius: 5px
+			@apply text-white pl-4
 			p
 				color: #fff
 				font-weight: 700
+			span
+				@apply text-white inline-block pl-4
 	@media (min-width: 1025px)
 		flex-direction: row
 		justify-content: flex-start

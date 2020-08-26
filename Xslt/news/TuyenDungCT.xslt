@@ -48,11 +48,11 @@
 							</div>
 						</div>
 						<div class="table">
-							<xsl:value-of disable-output-escaping="yes" select="/NewsDetail/NewsAttributes[1]/Content">
+							<xsl:value-of disable-output-escaping="yes" select="/NewsDetail/NewsAttributes">
 							</xsl:value-of>
 						</div>
 						<div class="full-content">
-							<xsl:value-of disable-output-escaping="yes" select="/NewsDetail/NewsAttributes[2]/Content">
+							<xsl:value-of disable-output-escaping="yes" select="/NewsDetail/FullContent">
 							</xsl:value-of>
 						</div>
 					</div>
@@ -63,14 +63,25 @@
 						</ul>
 					</div>
 				</div>
-				<ul class="button">
-					<li><a href="#">ứng tuyển</a></li>
-					<li><a href="#">tải form ứng tuyển</a></li>
-				</ul>
+				<div class="apply-form">
+					<div class="btn button-apply"><a class="btn btn-primary " href="#"> <span>Ứng tuyển</span></a></div>
+					<div class="btn button-download"><a class="btn btn-primary " href="#"> <span> Tải fomr ứng
+								tuyển</span></a></div>
+				</div>
 			</div>
 		</section>
 	</xsl:template>
+	<xsl:template match="NewsAttributes">
+		<tr>
+			<td class='text-left'>
+				<xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
+			</td>
+			<td>
+				<xsl:value-of disable-output-escaping="yes" select="Content"></xsl:value-of>
+			</td>
+		</tr>
 
+	</xsl:template>
 	<xsl:template match="NewsOther">
 		<li>
 			<div class="date">

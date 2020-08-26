@@ -1,5 +1,7 @@
 .home-h6
 	background: #f5f5f5
+	.col
+		position: relative
 	.swiper-container
 		width: 100%
 		.swiper-slide
@@ -18,9 +20,8 @@
 					object-fit: contain
 	.button-slide
 		position: absolute
-		top: 10%
-		right: 5%
-		transform: translate(-50%,-50%)
+		top: 0
+		right: 15px
 		display: flex
 		align-items: center
 		.swiper-prev,.swiper-next
@@ -41,6 +42,7 @@
 	.video
 		border: 5px solid #ffffff
 		box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.1)
+		position: relative
 		a
 			+img-ratio(200/380)
 		&::before
@@ -49,7 +51,7 @@
 			position: absolute
 			z-index: 3
 			top: 50%
-			height: 0
+			height: 50px
 			left: 50%
 			transform: translate(-50%,-50%)
 		@media (min-width: 1025px)

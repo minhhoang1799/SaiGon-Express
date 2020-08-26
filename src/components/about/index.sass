@@ -128,8 +128,8 @@
 			width: 100%
 			height: 100%
 		.content
+			@apply overflow-y-auto
 			height: 200px
-			max-height: 200px
 			padding-right: 35px
 			font-size: 14px
 			@apply leading-relaxed
@@ -145,12 +145,15 @@
 		@media (min-width: 576px)
 			.content
 				padding-right: 75px
-				height: 150px
+				height: 250px
 		@media (min-width: 1025px)
 			.content
 				padding-right: 75px
-				height: 250px
+				height: 300px
 	.giai-phap
+		.item-wrapper 
+			.image-transport 
+				+img-ratio(300/390)
 		.main-slide
 			position: relative
 			margin-top: 45px
@@ -183,20 +186,25 @@
 							color: #fff
 	.tam-nhin
 		.content
-			margin-top: 55px
 			padding-right: 8.33%
 			max-height: 350px
 			.decs
 				color: $mainColor
 				font-size: 18px
 				font-weight: 500
+				@apply leading-relaxed
+				*
+					@apply leading-relaxed
+					
 			p
 				margin-top: 20px
 				display: flex
 				flex-direction: column
+				@apply leading-relaxed
 				span
 					margin-top: 25px
 					position: relative
+					@apply leading-relaxed
 					em
 						font-size: 10px
 						color: #666
@@ -246,10 +254,12 @@
 			margin-bottom: 35px
 		.content
 			padding: 0 16.67%
-			p
-				color: #fff
-				font-size: 14px
+			@apply leading-relaxed text-14 text-white
+			*
+				@apply leading-relaxed text-14 text-white
 	.gia-tri
+		.main-title
+			@apply pt-6
 		.doanh-nghiep
 			display: flex
 			align-items: center
@@ -269,24 +279,27 @@
 					top: 0
 					z-index: 1
 			.content
-				margin-top: 30px
-				p
-					font-size: 14px
-					margin-bottom: 25px
+				*
+					@apply text-14 text-main leading-relaxed mb-4
 	.doi-tac
 		background: #ebebeb
 		.container
 			position: relative
 			.text
 				font-size: 14px
+				@apply text-14 leading-relaxed text-main
 				margin: 30px 0
 			.image
-				width: 195px
-				height: 100px
-				background: #fff
-				display: flex
-				justify-content: center
-				align-items: center
+				box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.1)
+				display: block
+				height: 60px
+				width: auto
+				padding: 20px
+				@apply  bg-white
+				img
+					width: 100%
+					height: 100%
+					object-fit: contain
 			.button-slide
 				position: absolute
 				top: 10%
@@ -304,9 +317,15 @@
 					display: flex
 					justify-content: center
 					align-items: center
+					@apply transition
 					em
+						@apply transition
 						font-size: 24px
 						color: #999999
+					&:hover
+						@apply	bg-primary
+						em
+							@apply text-white
 .giaiphap-popup
 	margin: 0 16.67%
 	padding: 30px 25px

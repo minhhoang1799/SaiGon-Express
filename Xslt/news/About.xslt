@@ -4,7 +4,7 @@
 	<xsl:output method="html" indent="yes" />
 
 	<xsl:template match="/">
-		<nav class="sub-nav">
+		<nav class="sub-nav sticky-navigation">
 			<div class="container">
 				<ul class="nav-child bg-white flex justify-between">
 					<xsl:apply-templates select="/ZoneList/Zone" mode="Nav"></xsl:apply-templates>
@@ -13,7 +13,9 @@
 		</nav>
 
 		<section class="about-wrapper">
-			<xsl:apply-templates select="/ZoneList/Zone" mode="Content"></xsl:apply-templates>
+			<div class="content-scroll-wrapper">
+				<xsl:apply-templates select="/ZoneList/Zone" mode="Content"></xsl:apply-templates>
+			</div>
 		</section>
 	</xsl:template>
 
@@ -21,7 +23,9 @@
 		<li>
 			<a>
 				<xsl:attribute name="href">
-					<xsl:value-of select="Url"></xsl:value-of>
+					<xsl:text>#about-section-</xsl:text>
+					<xsl:value-of disable-output-escaping="yes" select="position()"></xsl:value-of>
+
 				</xsl:attribute>
 				<xsl:attribute name="title">
 					<xsl:value-of select="Title"></xsl:value-of>
@@ -31,9 +35,11 @@
 		</li>
 	</xsl:template>
 
+
 	<xsl:template match="Zone" mode="Content">
+
 		<xsl:if test="position() = 1">
-			<div class="tong-quan main-line">
+			<div class="tong-quan main-line product-section-id" id="about-section-1">
 				<div class="container">
 					<h2 class="main-title text-center">
 						<xsl:value-of disable-output-escaping="yes" select="News/Title"></xsl:value-of>
@@ -54,7 +60,8 @@
 						</div>
 						<div class="col w-full lg:w-1/2">
 							<div class="content  overflow-y-scroll">
-								<xsl:value-of disable-output-escaping="yes" select="News/FullContent"></xsl:value-of>
+								<xsl:value-of disable-output-escaping="yes" select="News/FullContent">
+								</xsl:value-of>
 							</div>
 						</div>
 					</div>
@@ -63,7 +70,7 @@
 		</xsl:if>
 
 		<xsl:if test="position() = 2">
-			<div class="giai-phap main-line">
+			<div class="giai-phap main-line product-section-id" id="about-section-2">
 				<div class="container">
 					<h2 class="main-title text-center">
 						<xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
@@ -82,7 +89,7 @@
 		</xsl:if>
 
 		<xsl:if test="position() = 3">
-			<div class="tam-nhin main-line">
+			<div class="tam-nhin main-line product-section-id" id="about-section-3">
 				<div class="container">
 					<div class="row">
 						<div class="col w-full lg:w-1/2">
@@ -95,7 +102,8 @@
 									<xsl:value-of select="News/BriefContent" disable-output-escaping="yes">
 									</xsl:value-of>
 								</h3>
-								<xsl:value-of select="News/FullContent" disable-output-escaping="yes"></xsl:value-of>
+								<xsl:value-of select="News/FullContent" disable-output-escaping="yes">
+								</xsl:value-of>
 							</div>
 						</div>
 						<div class="col w-full lg:w-1/2">
@@ -117,7 +125,7 @@
 
 		<xsl:if test="position() = 4">
 			<div class="su-menh">
-				<div class="icon flex justify-center">
+				<div class="icon flex justify-center product-section-id" id="about-section-4">
 					<img>
 					<xsl:attribute name="src">
 						<xsl:value-of select="News/ImageUrl"></xsl:value-of>
@@ -141,7 +149,7 @@
 		</xsl:if>
 
 		<xsl:if test="position() = 5">
-			<div class="gia-tri main-line">
+			<div class="gia-tri main-line product-section-id" id="about-section-5">
 				<div class="icon flex justify-center">
 					<img>
 					<xsl:attribute name="src">
@@ -157,7 +165,8 @@
 				</h2>
 				<div class="container">
 					<div class="row">
-						<xsl:apply-templates select="News[position() &lt; 6]" mode="ZoneNews-5"></xsl:apply-templates>
+						<xsl:apply-templates select="News[position() &lt; 6]" mode="ZoneNews-5">
+						</xsl:apply-templates>
 					</div>
 					<xsl:apply-templates select="News[6]" mode="ZoneNews-5-Last"></xsl:apply-templates>
 				</div>
@@ -165,7 +174,7 @@
 		</xsl:if>
 
 		<xsl:if test="position() = 6">
-			<div class="doi-tac main-line">
+			<div class="doi-tac main-line product-section-id" id="about-section-6">
 				<div class="container">
 					<h2 class="main-title text-left">
 						<xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
@@ -185,6 +194,7 @@
 				</div>
 			</div>
 		</xsl:if>
+
 
 	</xsl:template>
 

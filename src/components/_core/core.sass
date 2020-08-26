@@ -25,3 +25,16 @@ main
 	width: 25px
 	height: 25px
 	background-position: center
+.homepage
+	header
+		background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%)
+	main
+		padding-top: 0
+.swiper-prev,.swiper-next
+	@apply transition
+	em
+		@apply transition
+	&:hover
+		background: $primary !important
+		em
+			color: #ffffff !important

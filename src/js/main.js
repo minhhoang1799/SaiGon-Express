@@ -1,4 +1,6 @@
 $(document).ready(function () {
+	quantityNumber();
+
 	//Declare normal variable javascript
 	//Hide element when smaller than 1025
 	if ($(window).width() < 1025) {
@@ -32,19 +34,91 @@ $(document).ready(function () {
 	menuToggle();
 	toggleBox();
 	appendFormHome();
-
+	stickyNav();
+	toggleApplyForm();
 });
 
+
+function quantityNumber() {
+	$(".qty-minus").click(function () {
+		let minus = $(this).parents('.input-group').find('input').val();
+		console.log('top')
+		console.log(minus)
+		if (minus > 0) {
+			$(this).parents('.input-group').find('input').val(minus - 1);
+		} else {
+			$(this).parents('.input-group').find('input').val(0);
+		}
+	});
+	$(".qty-plus").on("click", function () {
+		let plus = Number($(this).parents('.input-group').find('input').val());
+		console.log('bottom')
+		console.log(plus)
+		$(this).parents('.input-group').find('input').val(plus + 1);
+	});
+}
+
+function stickyNav() {
+	if ($(".sticky-navigation").length) {
+		$(".sticky-navigation").scrollToFixed({
+			zIndex: 99,
+			marginTop: $("header").outerHeight(),
+		});
+	}
+
+	$(window)
+		.scroll(function () {
+			var scrollDistance = $(window).scrollTop();
+			// Assign active class to nav links while scolling
+			$(".content-scroll-wrapper .product-section-id").each(function (i) {
+				if (
+					$(this).position().top -
+					$(".sticky-navigation").outerHeight() -
+					$("header").outerHeight() -
+					1 <=
+					scrollDistance
+				) {
+					$(".sticky-navigation li.active").removeClass("active");
+					$(".sticky-navigation li").eq(i).addClass("active");
+				}
+			});
+		})
+		.scroll();
+	$(".sticky-navigation a").on("click", function (event) {
+		if (this.hash !== "") {
+			let offset =
+				$("header").outerHeight() + $(".sticky-navigation").outerHeight();
+			var hash = this.hash;
+			$("html, body").animate({
+					scrollTop: $(hash).offset().top - offset,
+				},
+				800,
+				function () {
+					window.location.hash = hash;
+				}
+			);
+		} // End if
+	});
+
+
+}
+function toggleApplyForm() {
+	$(".apply-form .button-apply a").on("click", function () {
+		$(".form-apply").slideToggle();
+	});
+}
 function appendFormHome() {
 	if ($(".home-guide-form").length) {
 		$('.home-guide-form').appendTo('.services-form .form-wrapper');
-			
-	}
-	
-		if ($(".news-form-wrapper").length) {
-			$('.news-form-wrapper').insertAfter('.news-detail-service').css({display: 'block'});
 
-		}
+	}
+
+	if ($(".news-form-wrapper").length) {
+		$('.news-form-wrapper').insertAfter('.news-detail-service').css({
+			display: 'block'
+		});
+
+	}
 }
 
 
@@ -68,7 +142,6 @@ function swiperInit() {
 			type: 'bullets',
 		},
 	});
-
 	var topBanner = new Swiper(".service-4 .swiper-container", {
 		// Optional parameters
 		speed: 1205,
