@@ -9,11 +9,26 @@
 				width: 100px
 				left: 0
 				transform: translateX(0)
+	p
+		strong
+			@apply inline-block my-4
+	ul
+		list-style-type: disc !important
+		padding-left: 20px
+		li
+			@apply mb-2
 	.table
 		width: 100%
 		padding: 30px 0
+		@apply block
+		@media screen and ( max-width: 1024px)
+			@apply overflow-x-auto
+			
 		table
 			width: 100%
+			@media screen and ( max-width: 1024px)
+				@apply whitespace-no-wrap
+				
 			tr
 				background: #f3f3f3
 				&:nth-child(2n)
@@ -21,11 +36,20 @@
 				td
 					font-size: 18px
 					padding: 20px 15px
+					@media screen and ( max-width: 1024px)
+						@apply text-16
+						
 					&:first-child
 						font-weight: 600
 	.list-news-service
+		@media screen and ( max-width: 1024px)
+			@apply p-0 
+			
 		li
 			display: block
+			@media screen and ( max-width: 1024px)
+				@apply pt-0 pb-4
+				
 			.date
 				margin-bottom: 10px
 			a

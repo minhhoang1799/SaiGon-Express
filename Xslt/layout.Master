@@ -93,13 +93,13 @@
 				</div>
 				<hr class="dash-line">
 				<div class="mobile-wrapper"></div>
+			</header>
+			
+			<main class="main">
 				<asp:Panel ID="divAlt1" runat="server" CssClass="altcontent1">
 					<asp:ContentPlaceHolder ID="altContent1" runat="server">
 					</asp:ContentPlaceHolder>
 				</asp:Panel>
-			</header>
-
-			<main class="main">
 				<asp:Panel ID="divLeft" runat="server" CssClass="leftside" Visible="True" SkinID="pnlPlain">
 					<%--<portal:PageMenu ID="PageMenu1" IsSubMenu="true" MaxDataRenderDepth="-1" StartingNodeOffset="-1" xsltFileName="LeftMenu.xslt" runat="server" />--%>
 					<asp:ContentPlaceHolder ID="leftContent" runat="server">
@@ -115,6 +115,9 @@
 					<asp:ContentPlaceHolder ID="rightContent" runat="server">
 					</asp:ContentPlaceHolder>
 				</asp:Panel>
+				<asp:Panel ID="divAltContent2" runat="server" CssClass="altcontent2">
+                    <asp:ContentPlaceHolder ID="altContent2" runat="server"></asp:ContentPlaceHolder>
+                </asp:Panel>
 			</main>
 			<footer class="footer">
 				<div class="footer-top">
@@ -258,6 +261,9 @@
 	<!-- ////////////// Javascript Include ////////////// -->
 	<script src="/Data/Sites/1/skins/default/js/core.min.js?v=1.0.0"></script>
 	<script src="/Data/Sites/1/skins/default/js/main.min.js?v=1.0.0"></script>
+	<script src="/Data/Sites/1/skins/default/js/custom.js?v=1.0.0"></script>
+	<script src="/Data/Sites/1/skins/default/js/custom_beta.js?v=1.5.2"></script>
+	<script src="/Data/Sites/1/skins/default/js/custom-warehouse.js"></script>
 </body>
 
 </html>

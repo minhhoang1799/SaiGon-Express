@@ -10,13 +10,16 @@
 		"bower_components/fancybox/dist/jquery.fancybox.min.js",
 		"src/_plugins/mapping-listener.js",
 		"src/_plugins/mapping.js",
+		"bower_components/aos/dist/aos.js",
 		"src/_plugins/scrolltofix.js",
 		"src/_plugins/ls.unveilhooks.min.js",
+		"src/_plugins/tweenmax.js",
 		"bower_components/swiper/dist/js/swiper.js"
 	],
 	"css": [
 		"src/_plugins/font.css",
 		"bower_components/swiper/dist/css/swiper.css",
+		"bower_components/aos/dist/aos.css",
 		"bower_components/fancybox/dist/jquery.fancybox.min.css"
 	]
 }

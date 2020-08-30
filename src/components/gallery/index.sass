@@ -1,0 +1,197 @@
+.media-display
+	@media screen and ( max-width:1024px)
+		@apply pb-0
+		
+	.media-display-wrapper
+		&:nth-child(even)
+			flex-direction: row-reverse
+	.row
+		margin: 0 0 30px 0
+		.col
+			margin: 0
+			padding: 0
+			@media screen and ( min-width:1024px )
+				padding: 0 15px
+			.row
+				margin: 0 -15px
+				.col
+					margin: 0
+					&:nth-child(1),&:nth-child(2)
+						padding:  0 15px 15px 15px
+					&:nth-child(3),&:nth-child(4)
+						padding: 15px 15px 0 15px
+		@media screen and ( max-width:1024px)
+			margin: 0
+		
+			.col
+				margin: 0 0 20px 0
+				.row
+					margin: 0 -10px
+					.col
+						&:nth-child(1),&:nth-child(2)
+							padding:  0 10px 10px 10px
+						&:nth-child(3),&:nth-child(4)
+							padding: 10px 10px 0 10px
+
+				
+	.tab-navigation-wrapper
+		@apply mb-6
+		@screen lg
+			@apply mb-8
+
+.media-figure
+	@apply relative h-full overflow-hidden
+	&.image-media
+		
+		.figure-image
+			.wrapper
+				a
+					display: block
+					height: 0
+					overflow: hidden
+					padding-top: 200 / 290 * 100%
+					position: relative
+					img
+						position: absolute
+						top: 0
+						left: 0
+						width: 100%
+						height: 100%
+						object-fit: cover
+		.caption
+			@apply px-2
+			opacity: 0
+			transition: .3s all ease-in-out
+		&:hover
+			.caption
+				opacity: 1
+			.caption-2
+				opacity: 0
+		.caption-2
+			transition: .3s all ease-in-out
+			.text
+				@apply text-white text-20 absolute left-50 translate-x-50 w-full text-center px-2
+				bottom: 15px
+	&.media-big
+		@media screen and ( max-width:1025px)
+			padding: 0
+			
+		.figure-image
+			&:after
+				content: ''
+				display: block
+				position: absolute
+				left: 0
+				bottom: 0
+				right: 0
+				top: 0
+				background: rgba(#333333,.5)
+				pointer-events: none
+				transition: .3s all ease-in-out
+				opacity: 0
+			.wrapper
+				a
+					display: block
+					height: 0
+					overflow: hidden
+					padding-top: 400 / 600 * 100%
+					position: relative
+					img
+						position: absolute
+						top: 0
+						left: 0
+						width: 100%
+						height: 100%
+						object-fit: cover
+			.caption
+				.text
+					@apply font-bold
+				.icon
+					height: 64px
+					width: 64px
+					img
+	&:hover
+		.figure-image
+			&:after
+				opacity: 1 
+	.figure-image
+		height: auto
+		position: relative
+		&.media-gallery
+			.caption
+				display: flex
+				flex-direction: column
+				.text
+					order: 1
+				.icon
+					height: 100%
+					width: 100%
+					order: 2
+					img
+						@apply block
+						margin: 0 auto
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			left: 0
+			bottom: 0
+			width: 100%
+			height: 100%
+			background: rgba(#333333,.5)
+			pointer-events: none
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			left: 0
+			bottom: 0
+			right: 0
+			top: 0
+			background: rgba(#333333,.5)
+			pointer-events: none
+			transition: .3s all ease-in-out
+			opacity: 0
+	.wrapper
+		height: 100%
+		a
+			@apply block
+			height: 100%
+			img
+				max-width: 100%
+				height: 100%
+				width: 100%
+	.caption
+		@apply absolute top-50 left-50 translate-50 z-10 pointer-events-none text-18  w-full text-center
+		@media screen and ( max-width:576px )
+			display: flex
+			justify-content: center
+			align-items: center
+			flex-direction: column
+		.icon
+			@apply flex items-center justify-center mx-auto
+			width: 65px
+			height: 65px
+			margin:  5px 0
+			@media screen and ( max-width: 1280px )
+				width: 46px
+				margin: 5px auto
+				height: 46px
+			@media screen and ( max-width: 576px )
+				width: 32px
+				margin: 5px auto
+				height: 32px
+			em
+				@apply text-white block mx-auto text-40
+				height: 40px
+				line-height: 40px
+			img
+				max-width: 100%
+				height: auto
+				display: block
+				margin: 0 auto !important
+		.text
+			@apply text-white text-20 text-center
+			@media screen and ( max-width:1024px)
+				@apply text-18
+				

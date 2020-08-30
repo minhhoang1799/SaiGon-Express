@@ -19,8 +19,30 @@
 	</xsl:template>
 
 	<xsl:template match="News">
-		<div class="col w-full sm:w-1/2 md:w-1/6">
-			<div class="item">
+		<div class="col w-1/2 md:w-1/6">
+			<div class="item" data-aos="zoom-in" data-aos-easing="linear" data-aos-delay="250" data-aos-duration="750"
+				data-aos-offset="200">
+				<xsl:if test="position() =2">
+					<xsl:attribute name="data-aos-delay">
+						<xsl:text>550</xsl:text>
+					</xsl:attribute>
+				</xsl:if>
+				<xsl:if test="position() =3">
+					<xsl:attribute name="data-aos-delay">
+						<xsl:text>850</xsl:text>
+					</xsl:attribute>
+				</xsl:if>
+				<xsl:if test="position() =4">
+					<xsl:attribute name="data-aos-delay">
+						<xsl:text>1150</xsl:text>
+					</xsl:attribute>
+				</xsl:if>
+				<xsl:if test="position() =5">
+					<xsl:attribute name="data-aos-delay">
+						<xsl:text>1450</xsl:text>
+					</xsl:attribute>
+				</xsl:if>
+			
 				<div class="icon">
 					<img>
 					<xsl:attribute name="src">

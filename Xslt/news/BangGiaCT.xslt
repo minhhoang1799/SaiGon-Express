@@ -35,7 +35,9 @@
 				<p class="decs">
 					<xsl:value-of disable-output-escaping="yes" select="News/BriefContent"></xsl:value-of>
 				</p>
-				<xsl:value-of disable-output-escaping="yes" select="News/FullContent"></xsl:value-of>
+				<div class="over-flow-x">
+					<xsl:value-of disable-output-escaping="yes" select="News/FullContent"></xsl:value-of>
+				</div>
 			</div>
 		</xsl:if>
 

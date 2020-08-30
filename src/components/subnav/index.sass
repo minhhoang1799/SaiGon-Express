@@ -26,6 +26,9 @@
 		box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.05)
 		.container
 			@apply overflow-x-auto flex justify-center items-center
+			@media screen and ( max-width: 1024px)
+				@apply justify-start
+				
 	.global-breadcrumb
 		@apply relative
 		margin-top: -40px
@@ -44,8 +47,10 @@
 	.nav-child
 		background: #ffffff
 		height: 50px
-
 		@apply flex items-center mt-0 justify-center
+		@media screen and ( max-width: 1024px)
+			@apply whitespace-no-wrap
+			
 		li
 			@apply px-2 m-0 h-full
 			&.active

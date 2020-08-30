@@ -48,12 +48,26 @@
 							</div>
 						</div>
 						<div class="table">
-							<xsl:value-of disable-output-escaping="yes" select="/NewsDetail/NewsAttributes">
-							</xsl:value-of>
+							<table>
+								<xsl:apply-templates select="/NewsDetail/NewsAttributes"></xsl:apply-templates>
+							</table>
 						</div>
 						<div class="full-content">
 							<xsl:value-of disable-output-escaping="yes" select="/NewsDetail/FullContent">
 							</xsl:value-of>
+						</div>
+						<div class="apply-form">
+							<div class="btn button-apply"><a class="btn btn-primary " href="javascript:;"> <span>Ứng
+										tuyển</span></a></div>
+							<div class="btn button-download"><a class="btn btn-primary " href="#"> <span> Tải fomr ứng
+										tuyển</span></a></div>
+						</div>
+						<div class="form-apply hidden">
+							<iframe>
+								<xsl:attribute name="src">
+									<xsl:value-of select="/NewsDetail/ApplyUrl"></xsl:value-of>
+								</xsl:attribute>
+							</iframe>
 						</div>
 					</div>
 					<div class="col w-full lg:w-1/3">
@@ -63,11 +77,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="apply-form">
-					<div class="btn button-apply"><a class="btn btn-primary " href="#"> <span>Ứng tuyển</span></a></div>
-					<div class="btn button-download"><a class="btn btn-primary " href="#"> <span> Tải fomr ứng
-								tuyển</span></a></div>
-				</div>
+
 			</div>
 		</section>
 	</xsl:template>

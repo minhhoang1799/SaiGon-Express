@@ -3,6 +3,15 @@
 	background-size: cover
 	background-position: center center
 	padding-bottom: 0
+	@media screen and ( max-width: 1024px)
+		@apply flex flex-col pt-0 pb-8
+		.top-container
+			order: 2
+		.nav-wrapper
+			order: 1
+			@apply mb-12
+	.swiper-slide
+		@apply h-auto
 	.main-title
 		color: #ffffff
 	.gallery-top
@@ -10,13 +19,14 @@
 		margin-bottom: 4rem
 		position: relative
 		@media screen and ( max-width: 1024px)
-			@apply mb-8
+			@apply mb-4
 			
 		.swiper-wrapper
 			.swiper-slide
 				.swiper-content
 					display: flex
 					align-items: stretch
+					@apply h-full
 					@media screen and ( max-width: 767px)
 						@apply flex-col
 						
@@ -30,7 +40,7 @@
 							object-fit: cover
 					.box-content
 						width: 60%
-						background: #ffffff
+						@apply h-full bg-white
 						@media screen and ( max-width: 767px)
 							@apply w-full
 						.content

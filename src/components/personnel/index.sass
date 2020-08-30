@@ -8,3 +8,28 @@
 		p
 			margin-top: 30px
 			font-size: 16px
+	.table-red
+		table
+			@apply text-center
+			th
+				border: 1px solid #ffffff
+				&:first-child,&:last-child
+					@apply text-center
+				&:nth-child(2)
+					@apply text-left px-8
+				
+			td
+				border: 1px solid #ffffff
+			tr
+				&:hover
+					td
+						background: rgba($primary,.1)
+						@apply text-primary
+						a
+							@apply text-primary
+				td
+					@apply transition text-center
+					&:first-child,&:last-child
+						@apply text-center
+					&:nth-child(2)
+						@apply text-left px-8

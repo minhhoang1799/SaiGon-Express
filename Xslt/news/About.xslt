@@ -176,6 +176,10 @@
 		<xsl:if test="position() = 6">
 			<div class="doi-tac main-line product-section-id" id="about-section-6">
 				<div class="container">
+					<div class="button-slide">
+						<div class="swiper-prev"><em class="mdi mdi-arrow-left"></em></div>
+						<div class="swiper-next"><em class="mdi mdi-arrow-right"></em></div>
+					</div>
 					<h2 class="main-title text-left">
 						<xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
 					</h2>
@@ -187,10 +191,7 @@
 							<xsl:apply-templates select="News" mode="ZoneNews-6"></xsl:apply-templates>
 						</div>
 					</div>
-					<div class="button-slide">
-						<div class="swiper-prev"><em class="mdi mdi-arrow-left"></em></div>
-						<div class="swiper-next"><em class="mdi mdi-arrow-right"></em></div>
-					</div>
+
 				</div>
 			</div>
 		</xsl:if>

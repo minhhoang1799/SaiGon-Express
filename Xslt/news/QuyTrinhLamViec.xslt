@@ -9,9 +9,10 @@
 
 	<xsl:template match="Zone">
 		<section class="home-5 main-line">
-			<div class="container">
+			<div class="container top-container">
 				<div class="row">
-					<div class="col w-full lg:w-2/3">
+					<div class="col w-full lg:w-2/3 " data-aos="fade-right" data-aos-easing="linear" data-aos-delay="600"
+						data-aos-duration="750" data-aos-offset="200">
 						<h2 class="main-title text-left">
 							<xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
 						</h2>
@@ -22,7 +23,8 @@
 							<div class="swiper-next"><em class="mdi mdi-arrow-right"></em></div>
 						</div>
 					</div>
-					<div class="col w-full lg:w-1/3">
+					<div class="col w-full lg:w-1/3" data-aos="fade-left" data-aos-easing="linear" data-aos-delay="600"
+						data-aos-duration="750" data-aos-offset="200">
 						<div class="services-form">
 							<div class="form-wrapper"></div>
 						</div>
@@ -31,7 +33,8 @@
 			</div>
 			<div class="nav-wrapper">
 				<div class="container">
-					<div class="swiper-container gallery-thumbs">
+					<div class="swiper-container gallery-thumbs" data-aos="zoom-in" data-aos-easing="linear" data-aos-delay="650"
+						data-aos-duration="750" data-aos-offset="200">
 						<div class="swiper-wrapper">
 							<xsl:apply-templates select="News" mode="Slide-2"></xsl:apply-templates>
 						</div>

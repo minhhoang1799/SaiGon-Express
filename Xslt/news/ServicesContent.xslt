@@ -30,14 +30,16 @@
 									<xsl:value-of select="News/Title"></xsl:value-of>
 								</xsl:attribute>
 								<div class="image">
-									<img>
-									<xsl:attribute name="src">
-										<xsl:value-of select="News/ImageUrl"></xsl:value-of>
-									</xsl:attribute>
-									<xsl:attribute name="alt">
-										<xsl:value-of select="News/Title"></xsl:value-of>
-									</xsl:attribute>
-									</img>
+									<div class='wrap'>
+										<img>
+										<xsl:attribute name="src">
+											<xsl:value-of select="News/ImageUrl"></xsl:value-of>
+										</xsl:attribute>
+										<xsl:attribute name="alt">
+											<xsl:value-of select="News/Title"></xsl:value-of>
+										</xsl:attribute>
+										</img>
+									</div>
 								</div>
 							</a>
 						</div>

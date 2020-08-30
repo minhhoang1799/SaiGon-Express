@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl">
-<xsl:output method="html" indent="yes"/>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl">
+	<xsl:output method="html" indent="yes" />
 
 	<xsl:template match="/">
 		<xsl:apply-templates select="/ZoneList/Zone"></xsl:apply-templates>
@@ -10,7 +11,8 @@
 		<xsl:if test="position() = 1">
 			<section class=" home-3 main-line">
 				<div class="container">
-					<h2 class="main-title text-center">
+					<h2 class="main-title text-center" data-aos="zoom-in" data-aos-easing="linear" data-aos-delay="250"
+						data-aos-duration="750" data-aos-offset="200">
 						<xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
 					</h2>
 					<div class="row justify-between">
@@ -31,7 +33,20 @@
 	</xsl:template>
 
 	<xsl:template match="News">
-		<div class="item">
+		<div class="item" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="550" data-aos-duration="750"
+			data-aos-offset="200">
+			<xsl:if test="position()= 2 or position()=5">
+				<xsl:attribute name="data-aos-delay">
+					<xsl:text>850</xsl:text>
+				</xsl:attribute>
+
+			</xsl:if>
+			<xsl:if test="position()= 3 or position()=6">
+				<xsl:attribute name="data-aos-delay">
+					<xsl:text>1150</xsl:text>
+				</xsl:attribute>
+
+			</xsl:if>
 			<div class="icon">
 				<img>
 				<xsl:attribute name="src">

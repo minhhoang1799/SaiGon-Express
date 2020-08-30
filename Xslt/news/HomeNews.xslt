@@ -6,10 +6,12 @@
 	<xsl:template match="/">
 		<section class="home-7 main-line">
 			<div class="container">
-				<h2 class="main-title text-center">
+				<h2 class="main-title text-center" data-aos="fade-down" data-aos-easing="linear" data-aos-delay="550"
+					data-aos-duration="750" data-aos-offset="200">
 					<xsl:value-of disable-output-escaping="yes" select="/NewsList/ModuleTitle"></xsl:value-of>
 				</h2>
-				<div class="slide">
+				<div class="slide" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="550" data-aos-duration="750"
+					data-aos-offset="200">
 					<div class="swiper-container">
 						<div class="swiper-wrapper">
 							<xsl:apply-templates select="/NewsList/News"></xsl:apply-templates>

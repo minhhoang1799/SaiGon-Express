@@ -4,33 +4,22 @@
 
   <xsl:template match="/">
     <xsl:if test="count(/BannerList/Banner) > 0">
-      <section class="cc-tagline-img">
-        <xsl:apply-templates select="/BannerList/Banner" mode="image"></xsl:apply-templates>
+    <section class="banner-wrapper">
+        <xsl:apply-templates select="/BannerList/Banner"></xsl:apply-templates>
       </section>
     </xsl:if>
   </xsl:template>
 
-  <xsl:template match="Banner" mode="image">
-    <figure>
+  <xsl:template match="Banner">
+    <div class="banner">
       <img>
-        <xsl:attribute name="src">
-          <xsl:value-of select="ImageUrl"></xsl:value-of>
-        </xsl:attribute>
-        <xsl:attribute name="alt">
-          <xsl:value-of select="Title" disable-output-escaping="yes"></xsl:value-of>
-        </xsl:attribute>
+      <xsl:attribute name="src">
+        <xsl:value-of select="ImageUrl"></xsl:value-of>
+      </xsl:attribute>
+      <xsl:attribute name="alt">
+        <xsl:value-of select="Title"></xsl:value-of>
+      </xsl:attribute>
       </img>
-      <figcaption>
-        <!--<div class="container">
-              <div class="row">
-                <div class="col-md-12 title">
-                  <h2>
-                    <xsl:value-of select="Title" disable-output-escaping="yes"></xsl:value-of>
-                  </h2>
-                </div>
-              </div>
-            </div>-->
-      </figcaption>
-    </figure>
+    </div>
   </xsl:template>
 </xsl:stylesheet>

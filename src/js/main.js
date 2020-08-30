@@ -36,6 +36,22 @@ $(document).ready(function () {
 	appendFormHome();
 	stickyNav();
 	toggleApplyForm();
+	AOS.init({
+		// Global settings:
+		disable: function () {
+			var maxWidth = 1024.1;
+			return window.innerWidth < maxWidth;
+		},
+		offset: 120, // offset (in px) from the original trigger point
+		delay: 0, // values from 0 to 3000, with step 50ms
+		duration: 700, // values from 0 to 3000, with step 50ms
+		easing: 'ease', // default easing for AOS animations
+		once: true, // whether animation should happen only once - while scrolling down
+		mirror: false, // whether elements should animate out while scrolling past them
+		anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+	});
+
 });
 
 
@@ -102,11 +118,13 @@ function stickyNav() {
 
 
 }
+
 function toggleApplyForm() {
 	$(".apply-form .button-apply a").on("click", function () {
 		$(".form-apply").slideToggle();
 	});
 }
+
 function appendFormHome() {
 	if ($(".home-guide-form").length) {
 		$('.home-guide-form').appendTo('.services-form .form-wrapper');
@@ -134,6 +152,7 @@ function swiperInit() {
 		// Optional parameters
 		slidesPerView: 1,
 		speed: 1205,
+		effect: 'fade',
 		autoplay: {
 			delay: 3000
 		},
@@ -142,6 +161,8 @@ function swiperInit() {
 			type: 'bullets',
 		},
 	});
+
+
 	var topBanner = new Swiper(".service-4 .swiper-container", {
 		// Optional parameters
 		speed: 1205,

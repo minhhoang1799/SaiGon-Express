@@ -1,4 +1,8 @@
 .transport
+	#map-transport
+		height: auto !important
+	#map-default
+		height: 100% !important
 	.form-wrapper
 		border: 1px solid #e1e1e1
 		padding: 40px
@@ -112,6 +116,9 @@
 	.form-wrapper
 		background: #f3f3f3
 		padding: 60px
+		@media screen and ( max-width:  767px)
+			padding: 30px 15px
+			
 	.main-title
 		@apply mb-8
 	label
@@ -130,6 +137,9 @@
 				color: #ffffff !important
 
 .transport-3
+	.main-child
+		&:nth-child(odd)
+			@apply flex-row-reverse
 	.content
 		.title
 			font-size: 18px
@@ -164,15 +174,38 @@
 				top: 50%
 				left: 50%
 				transform: translate(-50%,-50%)
+.transport-custom-padding
+	@apply pb-8
+	.main-child,.main-line
+		@apply pt-0
+	.list-question
+		@apply pb-0
+.transport-last-padding
+	.wrapper
+		@apply pt-0
+		border-bottom: none !important
 .transport-4
+	@apply pt-0
+
 	.wrapper
 		border-bottom: 1px solid $mainColor
 		.main-title
 			font-size: 24px
+		.over-flow-x
+			@media screen and ( max-width: 1024px)
+				@apply overflow-x-auto
+				.nav-transport
+					@apply whitespace-no-wrap
+					li
+						&:first-child
+							@apply ml-0
+						@apply w-auto mx-4
+				
 		.nav-transport
 			display: flex
 			justify-content: space-between
 			align-items: center
+			@apply pt-6
 			li
 				width: 285px
 				height: 80px
@@ -185,6 +218,7 @@
 				p
 					font-weight: 700
 					font-size: 16px
+					@apply mb-0 text-center
 				&::after
 					content: '+'
 					position: absolute
@@ -215,13 +249,17 @@
 					height: 255px
 .table-wrapper
 	width: 100%
+	@media screen and ( max-width: 1024px)
+		@apply overflow-x-auto
+		table
+			@apply whitespace-no-wrap
+		
 	table
 		width: 100%
 		border: 1px solid #e1e1e1
-		thead
-			th
-				@apply bg-primary
-			
+		th
+			@apply bg-primary
+		
 		tr
 			background: #f7f7f7
 

@@ -2,22 +2,39 @@
 	.banner
 		position: relative
 		width: 100%
-		img
-			width: 100%
-			height: 100%
+		a
+			@media screen and ( max-width: 1024px)
+				display: block
+				height: 450px
+				width: auto
+				img
+					width: 100%
+					height: 100%
+					object-fit: cover
+			@media screen and ( max-width: 767px)
+				height: 350px
+			@media screen and ( max-width: 420px)
+				height: 300px
+			@media screen and ( min-width: 1024.1px)
+				+img-ratio(780/1920)
 		.content
-			position: absolute
+			@apply w-full
+			position: absolute 
 			left: 50%
 			bottom: 60px
 			transform: translateX(-50%)
 			h3
 				text-align: center
-				@apply text-36
+				@apply text-24 w-full
 				font-weight: 700
 				color: #fff
+				@screen lg
+					@apply text-36
 			p
-				@apply text-36
+				@apply text-24 text-center w-full
 				color: #fff
+				@screen lg
+					@apply text-36
 	.swiper-pagination-bullet
 		background: #e3e3e3
 		height: 10px

@@ -23,6 +23,11 @@
 				color: #adadad
 				font-size: 14px
 				margin-top: 10px
+				height: 76px
+				display: -webkit-box
+				-webkit-line-clamp: 4
+				-webkit-box-orient: vertical
+				overflow: hidden
 	@media (min-width: 1025px)
 		position: relative
 		&::before
@@ -50,6 +55,10 @@
 .home-4
 	background: #fff
 	padding: 50px 0 80px
+	.justify-between
+		@media screen and ( max-width:767px)
+			@apply justify-center
+			
 	.item
 		.icon
 			display: flex
@@ -58,8 +67,10 @@
 		.content
 			text-align: center
 			.title
-				font-weight: 700
-				font-size: 48px
-				color: $mainColor
+				@apply text-32 text-primary font-bold pt-4
+				@screen lg
+					@apply text-48
 			p
-				font-size: 18px
+				@apply text-16 pt-2
+				@screen lg
+					@apply text-18

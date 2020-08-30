@@ -1,0 +1,131 @@
+.news-display
+	.title
+		a
+			@apply text-18 text-main font-bold uppercase leading-relaxed block mb-4
+	.news-big
+		@apply relative
+		.figure-image
+			a
+				+img-ratio(600/600)
+		.figcaption
+			@apply absolute bottom-0 left-0 bg-white pointer-events-none
+			max-width: 390px
+			@media screen and ( max-width: 576px)
+				@apply static
+				max-width: 100%
+			.text
+				height: 56px
+				@apply mb-4
+				@screen lg
+					@apply mb-6
+				&:hover
+					a
+						@apply text-primary underline
+				a
+					@apply text-18 font-normal transition leading-relaxed font-bold uppercase
+					display: -webkit-box
+					-webkit-line-clamp: 2
+					-webkit-box-orient: vertical
+					overflow: hidden
+					
+			.caption
+				@apply text-16 font-normal mb-4 
+				display: -webkit-box
+				-webkit-line-clamp: 2
+				-webkit-box-orient: vertical
+				overflow: hidden
+				@screen lg
+					@apply text-18
+	.small-news-wrapper
+		.news-small
+			@apply flex flex-row flex-wrap
+			&:last-child
+				.col
+					@media screen and ( max-width:1025px)
+						margin-bottom: 0
+		.row
+			margin: 0 
+			.col
+				padding: 0 !important
+				margin-bottom: 30px
+		.news-figure
+			.figure-image
+				height: 100%
+				a
+					overflow: hidden
+					display: block
+					height: 180px
+					max-width: 180px
+					min-width: 180px
+					width: auto
+					img
+						width: 100%
+						height: 100%
+						object-fit: cover
+					@media screen and (max-width:575px)
+						height: 100%
+					@media screen and ( max-width: 1280px)
+						height: 135px
+						max-width: 135px
+						min-width: 135px
+					@media screen and ( max-width: 1024px)
+						+img-ratio(360/360)
+						max-width: 100%
+
+						
+
+			.figcaption
+				height: 100%
+				border: none
+				@apply pl-2 flex flex-col justify-between items-start py-4
+				@media screen and ( max-width: 1280px)
+					@apply py-2
+				@media screen and ( max-width: 1024px)
+					@apply pl-8 justify-start
+					
+				.text
+					a
+						@apply text-16
+						@screen lg
+							@apply text-20
+						@media screen and ( max-width: 1280px)
+							display: -webkit-box
+							-webkit-line-clamp: 2
+							-webkit-box-orient: vertical
+							overflow: hidden
+							
+	.bottom-row
+		@apply pt-8
+		.news-figure
+			
+			.figure-image
+				a
+					+img-ratio(390/390)
+	.news-figure
+
+		.figcaption
+			@apply transition
+			border: 1px solid transparent
+			@apply px-4 py-4
+			border-bottom: 1px solid #ebebeb
+			border-right: 1px solid #ebebeb
+			border-left: 1px solid #ebebeb 
+			@screen lg
+				@apply px-8 py-4
+			.text
+				@apply mb-2 
+				&:hover
+					a
+						@apply text-primary underline
+				a
+					@apply text-18 font-normal transition leading-relaxed font-bold uppercase
+					display: -webkit-box
+					-webkit-line-clamp: 2
+					-webkit-box-orient: vertical
+					overflow: hidden
+			.caption
+				@apply text-16 text-grey-2 leading-normal
+				display: -webkit-box
+				-webkit-line-clamp: 3
+				-webkit-box-orient: vertical
+				overflow: hidden
