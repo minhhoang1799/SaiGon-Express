@@ -60,57 +60,63 @@
 					</div>
 				</div>
 			</div>
-			<div class="news-orther main-line">
+			<div class="news-orther main-line news-car-type-wrap">
 				<div class="container">
 					<div class="news-other-title">
 						<div class="title"><em class="material-icons">border_color</em>
-							<p>Bài viết liên quan</p>
+							<p>Các dòng xe khác</p>
 						</div>
 					</div>
-					<div class="row">
-						<xsl:apply-templates select="/NewsDetail/NewsOther"></xsl:apply-templates>
+					<div class="news-wrap">
+						<div class="nav-arrow-prev">
+							<span class='lnr lnr-chevron-left'></span>
+						</div>
+						<div class="nav-arrow-next">
+							<span class='lnr lnr-chevron-right'></span>
+						</div>
+						<div class="swiper-container">
+							<div class="swiper-wrapper">
+								<xsl:apply-templates select="/NewsDetail/NewsOther"></xsl:apply-templates>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 	</xsl:template>
 	<xsl:template match="NewsOther">
-		<div class="col w-full md:w-1/2 lg:w-1/4">
-			<div class="col-match-height">
-				<div class="news-child">
-					<div class="image">
-						<a>
-							<xsl:attribute name="href">
-								<xsl:value-of select="Url"></xsl:value-of>
-							</xsl:attribute>
-							<xsl:attribute name="title">
-								<xsl:value-of select="Title"></xsl:value-of>
-							</xsl:attribute>
-							<img>
-							<xsl:attribute name="src">
-								<xsl:value-of select="ImageUrl"></xsl:value-of>
-							</xsl:attribute>
-							<xsl:attribute name="alt">
-								<xsl:value-of select="Title"></xsl:value-of>
-							</xsl:attribute>
-							</img>
-						</a>
-					</div>
-					<div class="content">
-						<a class="title" href="#">
-							<xsl:attribute name="href">
-								<xsl:value-of select="Url"></xsl:value-of>
-							</xsl:attribute>
-							<xsl:attribute name="title">
-								<xsl:value-of select="Title"></xsl:value-of>
-							</xsl:attribute>
+		<div class="swiper-slide">
+			<div class="news-car-type">
+				<div class="image">
+					<a>
+						<xsl:attribute name="href">
+							<xsl:value-of select="Url"></xsl:value-of>
+						</xsl:attribute>
+						<xsl:attribute name="title">
 							<xsl:value-of select="Title"></xsl:value-of>
-						</a>
-						<p>
-							<xsl:value-of disable-output-escaping="yes" select="BriefContent"></xsl:value-of>
-						</p>
-						<xsl:value-of select="EditLink" disable-output-escaping="yes"></xsl:value-of>
-					</div>
+						</xsl:attribute>
+						<img>
+						<xsl:attribute name="src">
+							<xsl:value-of select="ImageUrl"></xsl:value-of>
+						</xsl:attribute>
+						<xsl:attribute name="alt">
+							<xsl:value-of select="Title"></xsl:value-of>
+						</xsl:attribute>
+						</img>
+					</a>
+				</div>
+				<div class="content">
+					<a class="title" href="#">
+						<xsl:attribute name="href">
+							<xsl:value-of select="Url"></xsl:value-of>
+						</xsl:attribute>
+						<xsl:attribute name="title">
+							<xsl:value-of select="Title"></xsl:value-of>
+						</xsl:attribute>
+						<xsl:value-of select="Title"></xsl:value-of>
+					</a>
+
+					<xsl:value-of select="EditLink" disable-output-escaping="yes"></xsl:value-of>
 				</div>
 			</div>
 		</div>

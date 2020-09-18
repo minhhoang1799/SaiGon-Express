@@ -124,62 +124,56 @@
 		</xsl:if>
 
 		<xsl:if test="position() = 4">
-			<div class="su-menh">
-				<div class="icon flex justify-center product-section-id" id="about-section-4">
-					<img>
-					<xsl:attribute name="src">
-						<xsl:value-of select="News/ImageUrl"></xsl:value-of>
-					</xsl:attribute>
-					<xsl:attribute name="alt">
-						<xsl:value-of select="News/Title"></xsl:value-of>
-					</xsl:attribute>
-					</img>
-				</div>
-				<h2 class="main-title text-center">
-					<xsl:value-of select="News/Title" disable-output-escaping="yes"></xsl:value-of>
-					<xsl:value-of select="News/EditLink" disable-output-escaping="yes"></xsl:value-of>
-				</h2>
+			<div class="about-us-destiny about-us-section" id="about-section-4">
 				<div class="container">
-					<div class="content text-center">
-						<xsl:value-of select="News/BriefContent" disable-output-escaping="yes">
-						</xsl:value-of>
-					</div>
+					<xsl:apply-templates select="News" mode='News-4'></xsl:apply-templates>
 				</div>
 			</div>
+
 		</xsl:if>
 
 		<xsl:if test="position() = 5">
-			<div class="gia-tri main-line product-section-id" id="about-section-5">
-				<div class="icon flex justify-center">
-					<img>
-					<xsl:attribute name="src">
-						<xsl:value-of select="ImageUrl"></xsl:value-of>
-					</xsl:attribute>
-					<xsl:attribute name="alt">
-						<xsl:value-of select="Title"></xsl:value-of>
-					</xsl:attribute>
-					</img>
-				</div>
-				<h2 class="main-title text-center">
-					<xsl:value-of select="Title"></xsl:value-of>
-				</h2>
+			<div class="about-us-core about-us-section" id="about-section-5">
 				<div class="container">
 					<div class="row">
-						<xsl:apply-templates select="News[position() &lt; 6]" mode="ZoneNews-5">
-						</xsl:apply-templates>
+						<div class="col w-full lg:w-1/2">
+							<div class="content">
+								<div class="main-title text-left">
+									<xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
+								</div>
+								<div class="toggle-wrapper">
+									<xsl:apply-templates select="News" mode='News-5'></xsl:apply-templates>
+								</div>
+							</div>
+						</div>
+						<div class="col w-full lg:w-1/2">
+							<div class="image-wrap bg-red-border">
+								<img>
+								<xsl:attribute name="src">
+									<xsl:value-of select="SecondImageUrl"></xsl:value-of>
+								</xsl:attribute>
+								<xsl:attribute name="alt">
+									<xsl:value-of select="Title"></xsl:value-of>
+								</xsl:attribute>
+								</img>
+							</div>
+						</div>
 					</div>
-					<xsl:apply-templates select="News[6]" mode="ZoneNews-5-Last"></xsl:apply-templates>
 				</div>
 			</div>
+
 		</xsl:if>
 
 		<xsl:if test="position() = 6">
-			<div class="doi-tac main-line product-section-id" id="about-section-6">
+			<div class="about-us-culture about-us-section" id="about-section-6">
 				<div class="container">
-					<div class="button-slide">
-						<div class="swiper-prev"><em class="mdi mdi-arrow-left"></em></div>
-						<div class="swiper-next"><em class="mdi mdi-arrow-right"></em></div>
-					</div>
+					<xsl:apply-templates select="News" mode='News-6'></xsl:apply-templates>
+				</div>
+			</div>
+		</xsl:if>
+		<xsl:if test="position()=7">
+			<div class="doi-tac main-line" id="about-section-7">
+				<div class="container">
 					<h2 class="main-title text-left">
 						<xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
 					</h2>
@@ -188,17 +182,34 @@
 					</p>
 					<div class="swiper-container">
 						<div class="swiper-wrapper">
-							<xsl:apply-templates select="News" mode="ZoneNews-6"></xsl:apply-templates>
+
+
+							<xsl:apply-templates select="News" mode='News-7'></xsl:apply-templates>
 						</div>
 					</div>
-
+					<div class="button-slide">
+						<div class="swiper-prev"><em class="mdi mdi-arrow-left"></em></div>
+						<div class="swiper-next"><em class="mdi mdi-arrow-right"></em></div>
+					</div>
 				</div>
 			</div>
 		</xsl:if>
 
-
 	</xsl:template>
-
+	<xsl:template match="News" mode='News-7'>
+		<div class="swiper-slide">
+			<div class="image">
+				<img>
+				<xsl:attribute name="src">
+					<xsl:value-of select="ImageUrl"></xsl:value-of>
+				</xsl:attribute>
+				<xsl:attribute name="alt">
+					<xsl:value-of select="Title"></xsl:value-of>
+				</xsl:attribute>
+				</img>
+			</div>
+		</div>
+	</xsl:template>
 	<xsl:template match="News" mode="ZoneNews-2">
 		<div class="swiper-slide">
 			<div class="item-wrapper">
@@ -273,7 +284,87 @@
 			</div>
 		</div>
 	</xsl:template>
+	<xsl:template match="News" mode='News-4'>
+		<div class="row">
+			<div class="col w-full lg:w-1/2">
+				<div class="image-wrap bg-red-border">
+					<img>
+					<xsl:attribute name="src">
+						<xsl:value-of select="ImageUrl"></xsl:value-of>
+					</xsl:attribute>
+					<xsl:attribute name="alt">
+						<xsl:value-of select="Title"></xsl:value-of>
+					</xsl:attribute>
+					</img>
+				</div>
+			</div>
+			<div class="col w-full lg:w-1/2">
+				<div class="content">
+					<div class="main-title text-left">
+						<xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
+						<xsl:value-of select="EditLink" disable-output-escaping="yes"></xsl:value-of>
+					</div>
+					<div class="over-flow-scollbar">
+						<xsl:value-of disable-output-escaping="yes" select="FullContent"></xsl:value-of>
+					</div>
+				</div>
+			</div>
+		</div>
+	</xsl:template>
+	<xsl:template match="News" mode='News-5'>
+		<div class="toggle-item">
+			<div class="title">
+				<div class="icon">
+					<div class="wrap">
+						<img>
+						<xsl:attribute name="src">
+							<xsl:value-of select="ImageUrl"></xsl:value-of>
+						</xsl:attribute>
+						<xsl:attribute name="alt">
+							<xsl:value-of select="Title"></xsl:value-of>
+						</xsl:attribute>
+						</img>
+					</div><span>
+						<xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
+						<xsl:value-of select="EditLink" disable-output-escaping="yes"></xsl:value-of>
+					</span>
+				</div><em class="mdi mdi-chevron-down"></em>
+			</div>
+			<article>
+				<div class="caption">
+					<xsl:value-of disable-output-escaping="yes" select="FullContent"></xsl:value-of>
+				</div>
+			</article>
+		</div>
 
+	</xsl:template>
+	<xsl:template match="News" mode='News-6'>
+		<div class="row">
+			<div class="col w-full lg:w-1/2">
+				<div class="image-wrap bg-red-border">
+					<img>
+					<xsl:attribute name="src">
+						<xsl:value-of select="ImageUrl"></xsl:value-of>
+					</xsl:attribute>
+					<xsl:attribute name="alt">
+						<xsl:value-of select="Title"></xsl:value-of>
+					</xsl:attribute>
+					</img>
+				</div>
+			</div>
+			<div class="col w-full lg:w-1/2">
+				<div class="content">
+					<div class="main-title text-left">
+						<xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
+						<xsl:value-of select="EditLink" disable-output-escaping="yes"></xsl:value-of>
+					</div>
+					<div class="over-flow-scollbar">
+						<xsl:value-of disable-output-escaping="yes" select="FullContent"></xsl:value-of>
+					</div>
+				</div>
+			</div>
+		</div>
+	</xsl:template>
 	<xsl:template match="News" mode="ZoneNews-5">
 		<div>
 			<xsl:if test="position() &lt; 3">

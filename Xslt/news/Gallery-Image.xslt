@@ -34,6 +34,9 @@
 				<div class="figure-image media-play">
 					<div class="wrapper">
 						<a>
+							<xsl:attribute name="data-thumbs">
+								<xsl:text>{"autoStart":true}</xsl:text>
+							</xsl:attribute>
 							<xsl:attribute name="data-fancybox">
 								<xsl:text>gallery-</xsl:text>
 								<xsl:value-of disable-output-escaping="yes" select="position()"></xsl:value-of>
@@ -54,6 +57,10 @@
 							</img>
 						</a>
 					</div>
+
+
+
+
 					<div class="hidden">
 						<xsl:apply-templates select="NewsImages">
 							<xsl:with-param select="position()" name="NewsPosition" />
@@ -83,6 +90,9 @@
 				<div class="figure-image media-play">
 					<div class="wrapper">
 						<a>
+							<xsl:attribute name="data-thumbs">
+								<xsl:text>{"autoStart":true}</xsl:text>
+							</xsl:attribute>
 							<xsl:attribute name="data-fancybox">
 								<xsl:text>gallery-</xsl:text>
 								<xsl:value-of disable-output-escaping="yes" select="position()"></xsl:value-of>
@@ -132,6 +142,9 @@
 					<div class="figure-image media-play">
 						<div class="wrapper">
 							<a>
+								<xsl:attribute name="data-thumbs">
+									<xsl:text>{"autoStart":true}</xsl:text>
+								</xsl:attribute>
 								<xsl:attribute name="data-fancybox">
 									<xsl:text>gallery-</xsl:text>
 									<xsl:value-of disable-output-escaping="yes" select="position()"></xsl:value-of>
@@ -181,6 +194,9 @@
 					<div class="figure-image media-play">
 						<div class="wrapper">
 							<a>
+								<xsl:attribute name="data-thumbs">
+									<xsl:text>{"autoStart":true}</xsl:text>
+								</xsl:attribute>
 								<xsl:attribute name="data-fancybox">
 									<xsl:text>gallery-</xsl:text>
 									<xsl:value-of disable-output-escaping="yes" select="position()"></xsl:value-of>

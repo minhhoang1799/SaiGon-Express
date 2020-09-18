@@ -1,8 +1,23 @@
 .transport
 	#map-transport
-		height: auto !important
+		@apply hidden
+		&.active
+			@apply block
+			height: 100% !important
+		@media screen and ( max-width: 1024px)
+			
+			height: auto !important
+			+img-ratio(700/780)
+			@apply hidden
+			&.active
+				@apply block
+				height: auto !important
+			
 	#map-default
 		height: 100% !important
+		@media screen and ( max-width: 1024px)
+			height: auto !important
+			+img-ratio(700/780)
 	.form-wrapper
 		border: 1px solid #e1e1e1
 		padding: 40px
@@ -141,6 +156,8 @@
 		&:nth-child(odd)
 			@apply flex-row-reverse
 	.content
+		*
+			@apply leading-relaxed
 		.title
 			font-size: 18px
 			font-weight: 700
@@ -190,7 +207,7 @@
 	.wrapper
 		border-bottom: 1px solid $mainColor
 		.main-title
-			font-size: 24px
+			@apply text-24
 		.over-flow-x
 			@media screen and ( max-width: 1024px)
 				@apply overflow-x-auto
@@ -253,7 +270,11 @@
 		@apply overflow-x-auto
 		table
 			@apply whitespace-no-wrap
-		
+	ul
+		list-style-type: disc
+		padding-left: 20px
+		li
+
 	table
 		width: 100%
 		border: 1px solid #e1e1e1

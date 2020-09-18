@@ -1,4 +1,5 @@
 .home-banner
+	@apply relative
 	.banner
 		position: relative
 		width: 100%
@@ -35,7 +36,11 @@
 				color: #fff
 				@screen lg
 					@apply text-36
+	.swiper-pagination
+		@apply absolute left-50 translate-x-50
+		bottom: 30px
 	.swiper-pagination-bullet
+		@apply mx-1 opacity-100 transition
 		background: #e3e3e3
 		height: 10px
 		width: 10px

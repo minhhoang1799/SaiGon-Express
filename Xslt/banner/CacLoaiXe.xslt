@@ -6,11 +6,11 @@
 	<xsl:template match="/">
 		<div class="feature-section main-line">
 			<div class="container">
-				<h2 class="main-title" data-aos="fade-down" data-aos-easing="linear" data-aos-delay="550" data-aos-duration="750"
+				<h2 class="main-title" data-aos="fade-down" data-aos-easing="linear" data-aos-delay="350" data-aos-duration="750"
 					data-aos-offset="200">
 					<xsl:value-of disable-output-escaping="yes" select="/BannerList/ModuleTitle"></xsl:value-of>
 				</h2>
-				<div class="feature-slider" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="550" data-aos-duration="750"
+				<div class="feature-slider" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="150" data-aos-duration="650"
 					data-aos-offset="200">
 					<div class="swiper-container">
 						<div class="swiper-wrapper">

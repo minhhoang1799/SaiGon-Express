@@ -4,7 +4,10 @@
 		padding: 30px 0 0 0 
 	.contact-us
 		background: #f9f9f9
-		padding: 70px 50px
+		padding: 50px
+		@media screen and ( max-width: 767px)
+			padding: 40px 30px 
+			
 		.logo
 			display: flex
 			justify-content: center
@@ -15,23 +18,27 @@
 			font-weight: 700
 			margin-top: 20px
 		.info
-			display: flex
 			margin: 12px 0
+			@apply flex items-center
+			&:first-child
+				@apply items-start
 			em
 				color: $mainColor
 				vertical-align: baseline
 				font-size: 16px
 			p
 				margin: 0 10px
-				font-size: 18px
+				@apply text-16
+				@screen lg
+					@apply text-18
 			img
-				width: 16px
-				height: 16px
+				width: 14px
+				height: 13px
 	.map
 		width: 100%
 		padding: 30px 0
 	.frm-btn
-		@apply absolute bottom-0 right-0
+		@apply static  mt-8
 		@media screen and ( max-width: 767px)
 			@apply static mt-6
 			

@@ -1,31 +1,90 @@
+.header-2
+	@apply fixed top-0 left-0 w-full  opacity-100  bg-white
+	transition: .3s transform ease-in-out
+	z-index: 999
+	transform: translateY(-100%)
+	height: 60px
+	box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.35)
+	@media screen and ( max-width:  1024px)
+		@apply hidden
+		
+	.container
+		@apply flex justify-between items-center 
+	.wrap-left-2,.wrap-right-2
+		@apply h-full
+	.wrap-top-2
+		@apply flex items-center justify-end  transition
+		@media screen and ( max-width: 1024px)
+			@apply p-0 h-full
+	.navbar-primary-menu
+		li
+			
+			a
+				@apply text-main
+			&:hover,&.active
+				a
+					@apply underline
+	.drop-down
+		@media screen and ( min-width: 1024.1px)
+			ul
+				@apply hidden absolute top-100 left-0 bg-white
+				box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.23)
+				li
+					@apply py-3 w-full
+					&:not(:last-child)
+						border-bottom: 1px solid #e1e1e1
+					&:hover,&.active
+						a
+							@apply text-main 
+							text-decoration: underline !important
+					a
+						@apply text-14 text-main uppercase px-5 font-normal whitespace-no-wrap w-full 
+						text-decoration: none !important
+						color: #333333 !important
+	.wrap-bottom
+		@apply flex
+	.nav-brand
+		@apply h-full
+		a
+			height: 60px
+			max-width: 140px
+	&.show-header
+		transform: translateY(0)
 header
-	@apply fixed top-0 left-0 w-full  opacity-100
+	@apply fixed top-0 left-0 w-full  opacity-100  
+	transition: .3s transform ease-in-out
 	z-index: 999
 	height: 140px
-	background: #464646
+	background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%)
 	@media screen and ( max-width: 1024px)
 		height: 60px
-	.nav-brand
-		@media screen and ( max-width: 1024px)
-			@apply h-full flex items-center justify-center
-		a
-			display: block
-			height: 80px
-			max-width: 220px
-			width: auto
-			@media screen and ( max-width: 1280px)
-				height: 70px
-				max-width: 180px
-			@media screen and ( max-width: 1024px)
-			
-				height: 60px
-				max-width: 140px
-				
-				
-			img
-				width: 100%
-				height: 100%
-				object-fit: contain
+		background: #464646
+		main
+			padding-top: 60px
+	&.bg-darkness
+		background: #464646
+	&.translate-top
+		transform: translateY(-100%)
+	// &.minimize
+	// 	@apply bg-primary 
+	// 	transform: translateY(0) !important
+	// 	background: none
+	// 	border: none
+	// 	height: 60px
+	// 	hr
+	// 		@apply hidden opacity-0
+	// 	.nav-brand
+	// 		@apply h-full
+	// 		a
+	// 			height: 60px
+	// 			max-width: 140px
+	// 	.wrap-top
+	// 		@apply h-0 opacity-0 transition
+	// 	.check-status
+	// 		@apply opacity-0 h-0 transition w-0
+	// 	.container
+	// 		@apply p-0 h-full transition
+
 	.container
 		@apply flex justify-between items-center pt-5 pb-3
 		@media screen and ( max-width: 1024px)
@@ -34,7 +93,7 @@ header
 	.wrap-left,.wrap-right
 		@apply h-full
 	.wrap-top
-		@apply flex items-center justify-end pb-3
+		@apply flex items-center justify-end pb-3 transition
 		@media screen and ( max-width: 1024px)
 			@apply p-0 h-full
 			
@@ -44,7 +103,7 @@ header
 		background: #747474
 	.contact-wrap
 		@media screen and ( max-width: 1024px)
-			@apply flex flex-col items-center pt-4
+			@apply hidden flex-col items-center pt-4
 			.ModuleContent
 				@apply flex flex-col justify-center items-center
 		.item
@@ -79,8 +138,7 @@ header
 
 	.check-status
 		@media screen and ( max-width: 1024px)
-
-			@apply mt-4 flex items-center
+			@apply mt-4 hidden items-center justify-center
 			.Module,.ModuleContent
 				@apply w-full flex items-center justify-center
 
@@ -110,23 +168,25 @@ header
 .social-wrap
 	@apply flex pl-4
 	@media screen and ( max-width: 1024px)
-		@apply flex justify-center items-center
+		@apply hidden justify-center items-center
 	.ModuleContent
 		@apply flex pl-4
 		@media screen and ( max-width: 1024px)
 			@apply flex justify-center items-center 
-			.fb
-				em
-					color: #4267B2
-			.linked
-				em
-					color: #2867B2
-			.yt
-				em
-					color: #FF0000
-			.mail
-				em
-					color: #282828
+	@media screen and ( max-width: 1024px)
+		
+		.fb
+			em
+				color: #4267B2
+		.linked
+			em
+				color: #2867B2
+		.yt
+			em
+				color: #FF0000
+		.mail
+			em
+				color: #282828
 	a
 		@apply flex items-center justify-center p-4
 		@screen lg
@@ -181,10 +241,31 @@ header
 	&.active
 		@apply opacity-100 pointer-events-auto bg-white z-20
 		transform: translateX(0)
+.nav-brand
+	@media screen and ( max-width: 1024px)
+		@apply h-full flex items-center justify-center
+	a
+		display: block
+		height: 80px
+		max-width: 220px
+		width: auto
+		@media screen and ( max-width: 1280px)
+			height: 70px
+			max-width: 180px
+		@media screen and ( max-width: 1024px)
+		
+			height: 60px
+			max-width: 140px
+			
+			
+		img
+			width: 100%
+			height: 100%
+			object-fit: contain
 .navbar-primary-menu
 	@apply flex items-center
 	@media screen and ( max-width: 1024px)
-		@apply flex-col justify-center items-start px-4 pb-8
+		@apply hidden flex-col justify-center items-center px-4 pb-2
 	li
 		@apply py-2 block
 		@screen lg
@@ -206,15 +287,16 @@ header
 				@apply flex justify-between items-center
 				a
 					width: calc( 100% - 30px )
+					@apply text-center pl-8
 				em
 					@apply flex items-center justify-center
 					width: 30px
 					height: 30px
 					
 			ul
-				@apply hidden 
+				@apply hidden
 				li
-					@apply block 
+					@apply flex items-center justify-center 
 		@media screen and ( min-width: 1024.1px)
 			@apply relative
 			&:hover

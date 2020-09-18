@@ -1,22 +1,46 @@
 $(document).ready(function () {
-	quantityNumber();
 
 	//Declare normal variable javascript
 	//Hide element when smaller than 1025
 	if ($(window).width() < 1025) {
-		$(".main-menu-nav").fadeIn(function () {
-			$(".main-menu-nav").css({
+		$(".navbar-primary-menu").fadeIn(function () {
+			$(".navbar-primary-menu").css({
+				display: "flex"
+			});
+		});
+		$(".contact-wrap").fadeIn(function () {
+			$(".contact-wrap").css({
+				display: "flex"
+			});
+		});
+		$(".check-status").fadeIn(function () {
+			$(".check-status").css({
+				display: "flex"
+			});
+		});
+		$(".social-wrap").fadeIn(function () {
+			$(".social-wrap").css({
 				display: "flex"
 			});
 		});
 	}
+
 
 	//Library init
 	$('[data-fancybox=""]').fancybox({
 		smallBtn: true,
 		toolbar: true,
 		type: "html",
-		clickSlide: 'toggleControls'
+		clickSlide: 'toggleControls',
+		buttons: [
+			'thumbs',
+		],
+		thumbs: {
+			autoStart: true, // Display thumbnails on opening
+			hideOnClose: true, // Hide thumbnail grid when closing animation starts
+			parentEl: ".fancybox-container", // Container is injected into this element
+			axis: "x" // Vertical (y) or horizontal (x) scrolling
+		},
 	});
 	//Declare function Javascript
 	toggleMobileMenu();
@@ -36,6 +60,7 @@ $(document).ready(function () {
 	appendFormHome();
 	stickyNav();
 	toggleApplyForm();
+	toggleSupport();
 	AOS.init({
 		// Global settings:
 		disable: function () {
@@ -53,32 +78,41 @@ $(document).ready(function () {
 	});
 
 });
+window.onscroll = function () {
+	fixHeader();
+};
 
+function fixHeader() {
+	if ($(window).width() > 1025) {
+		var timer;
+		if (
+			document.body.scrollTop > 140 ||
+			document.documentElement.scrollTop > 140
+		) {
+			timer = setTimeout(function () {
+				$("header").addClass("translate-top");
 
-function quantityNumber() {
-	$(".qty-minus").click(function () {
-		let minus = $(this).parents('.input-group').find('input').val();
-		console.log('top')
-		console.log(minus)
-		if (minus > 0) {
-			$(this).parents('.input-group').find('input').val(minus - 1);
+				$(".header-2").addClass("show-header");
+			}, 300);
+
 		} else {
-			$(this).parents('.input-group').find('input').val(0);
-		}
-	});
-	$(".qty-plus").on("click", function () {
-		let plus = Number($(this).parents('.input-group').find('input').val());
-		console.log('bottom')
-		console.log(plus)
-		$(this).parents('.input-group').find('input').val(plus + 1);
-	});
+			clearTimeout(timer);
+			timer = setTimeout(function () {
+				$("header").removeClass("translate-top");
+				$(".header-2").removeClass("show-header");
+
+			}, 300);
+		};
+	}
 }
+
 
 function stickyNav() {
 	if ($(".sticky-navigation").length) {
 		$(".sticky-navigation").scrollToFixed({
 			zIndex: 99,
-			marginTop: $("header").outerHeight(),
+			marginTop: 60,
+
 		});
 	}
 
@@ -152,16 +186,71 @@ function swiperInit() {
 		// Optional parameters
 		slidesPerView: 1,
 		speed: 1205,
-		effect: 'fade',
+
 		autoplay: {
 			delay: 3000
 		},
 		pagination: {
-			el: '.swiper-pagination',
+			el: '.home-banner .swiper-pagination',
 			type: 'bullets',
 		},
 	});
+	var productThumbs = new Swiper(
+		".swiper-service-thumb  .swiper-container", {
+			spaceBetween: 30,
+			freeMode: false,
+			breakpointsInverse: true,
+			breakpoints: {
+				280: {
+					slidesPerView: 1,
+					direction: "horizontal",
+					spaceBetween: 10,
+				},
+				576: {
+					slidesPerView: 2,
+					direction: "horizontal",
+					spaceBetween: 10,
+				},
+				767: {
+					slidesPerView: 3,
+					direction: "horizontal",
 
+				},
+				1025: {
+					slidesPerView: 6,
+					spaceBetween: 10,
+					direction: "vertical"
+				},
+				1440: {
+					slidesPerView: 8,
+					spaceBetween: 10,
+					direction: "vertical"
+				}
+			},
+			watchSlidesVisibility: true,
+			watchSlidesProgress: true,
+
+		}
+	);
+
+	var productMain = new Swiper(".swiper-service-top .swiper-container", {
+		slidesPerView: 1,
+		centeredSlides: true,
+		effect: "fade",
+		fadeEffect: {
+			crossFade: true
+		},
+		speed: 750,
+		loop: false,
+		navigation: {
+			nextEl: ".swiper-service-top .nav-next",
+			prevEl: ".swiper-service-top .nav-prev"
+		},
+		thumbs: {
+			swiper: productThumbs
+		}
+
+	});
 
 	var topBanner = new Swiper(".service-4 .swiper-container", {
 		// Optional parameters
@@ -219,8 +308,11 @@ function swiperInit() {
 		speed: 1205,
 		breakpointsInverse: true,
 		breakpoints: {
-			320: {
+			250: {
 				slidesPerView: 1,
+			},
+			375: {
+				slidesPerView: 2,
 			},
 			768: {
 				slidesPerView: 3,
@@ -236,6 +328,62 @@ function swiperInit() {
 		navigation: {
 			nextEl: ".home-7 .nav-arrow-next",
 			prevEl: ".home-7 .nav-arrow-prev"
+		}
+	});
+	var homeMoileSwiper = new Swiper(".home-4 .swiper-container", {
+		// Optional parameters
+		spaceBetween: 30,
+		speed: 1205,
+		slidesPerView: 2,
+		slidesPerColumn: 2,
+		observer: true,
+		observeParents: true,
+		autoplay: {
+			delay: 3000
+		},
+		navigation: {
+			nextEl: ".home-4 .nav-arrow-next",
+			prevEl: ".home-4 .nav-arrow-prev"
+		}
+	});
+	var homeMoileSwiper = new Swiper(".home-4 .swiper-container", {
+		// Optional parameters
+		spaceBetween: 30,
+		speed: 1205,
+		slidesPerView: 2,
+		slidesPerColumn: 2,
+		observer: true,
+		observeParents: true,
+		autoplay: {
+			delay: 3000
+		},
+		navigation: {
+			nextEl: ".home-4 .nav-arrow-next",
+			prevEl: ".home-4 .nav-arrow-prev"
+		}
+	});
+	var cartTypeSwiper = new Swiper(".news-car-type-wrap .swiper-container", {
+		// Optional parameters
+		spaceBetween: 30,
+		speed: 1205,
+		breakpointsInverse: true,
+		breakpoints: {
+			320: {
+				slidesPerView: 2,
+			},
+			768: {
+				slidesPerView: 3,
+			},
+			1280: {
+				slidesPerView: 4,
+			}
+		},
+		autoplay: {
+			delay: 3000
+		},
+		navigation: {
+			nextEl: ".news-car-type-wrap .nav-arrow-next",
+			prevEl: ".news-car-type-wrap .nav-arrow-prev"
 		}
 	});
 	var sv8 = new Swiper(".service-8 .swiper-container", {
@@ -286,6 +434,8 @@ function swiperInit() {
 		},
 		autoplay: {
 			delay: 3000,
+			reverseDirection: true,
+
 		},
 		navigation: {
 			nextEl: ".feature-section .swiper-next",
@@ -346,7 +496,7 @@ function toggleBox() {
 
 function mappingMenu() {
 	return new MappingListener({
-		selector: ".navbar-primary-menu",
+		selector: "header .navbar-primary-menu",
 		mobileWrapper: ".mobile-wrapper",
 		mobileMethod: "appendTo",
 		desktopWrapper: ".wrap-bottom",
@@ -508,7 +658,7 @@ function slideGlobal() {
 			disableOnInteraction: false,
 		},
 		pagination: {
-			el: '.swiper-pagination',
+			el: '.giai-phap .swiper-pagination',
 			clickable: true,
 		},
 		navigation: {
@@ -534,7 +684,7 @@ function slideGlobal() {
 			disableOnInteraction: false,
 		},
 		pagination: {
-			el: '.swiper-pagination',
+			el: '.doi-tac .swiper-pagination',
 			clickable: true,
 		},
 		navigation: {
@@ -564,7 +714,7 @@ function slideGlobal() {
 			disableOnInteraction: false,
 		},
 		pagination: {
-			el: '.swiper-pagination',
+			el: '.home-h6 .swiper-pagination',
 			clickable: true,
 		},
 		navigation: {
@@ -598,4 +748,29 @@ function toggleFaq() {
 			$(this).find('.reply').slideDown(500)
 		}
 	})
+}
+
+function toggleSupport() {
+	$(".toggle-item > .title").click(function (e) {
+		e.preventDefault();
+		if (
+			!$(this)
+			.parent()
+			.hasClass("active")
+		) {
+			$(".toggle-item article").slideUp();
+			$(this)
+				.next()
+				.slideToggle();
+			$(".toggle-item").removeClass("active");
+			$(this)
+				.parent()
+				.addClass("active");
+		} else {
+			$(this)
+				.next()
+				.slideToggle();
+			$(".toggle-item").removeClass("active");
+		}
+	});
 }

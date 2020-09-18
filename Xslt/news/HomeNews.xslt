@@ -6,20 +6,29 @@
 	<xsl:template match="/">
 		<section class="home-7 main-line">
 			<div class="container">
-				<h2 class="main-title text-center" data-aos="fade-down" data-aos-easing="linear" data-aos-delay="550"
+				<h2 class="main-title text-center" data-aos="fade-down" data-aos-easing="linear" data-aos-delay="350"
 					data-aos-duration="750" data-aos-offset="200">
 					<xsl:value-of disable-output-escaping="yes" select="/NewsList/ModuleTitle"></xsl:value-of>
 				</h2>
-				<div class="slide" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="550" data-aos-duration="750"
-					data-aos-offset="200">
+				<div class="slide" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="150"
+					data-aos-duration="650" data-aos-offset="200">
 					<div class="swiper-container">
 						<div class="swiper-wrapper">
+
 							<xsl:apply-templates select="/NewsList/News"></xsl:apply-templates>
+
 						</div>
 					</div>
-					<div class="swiper-prev"><em class="mdi mdi-arrow-left"></em></div>
-					<div class="swiper-next"><em class="mdi mdi-arrow-right"></em></div>
+					<div class="button-wrapper-center">
+						<div class="nav-arrow-prev">
+							<span class='lnr lnr-chevron-left'></span>
+						</div>
+						<div class="nav-arrow-next">
+							<span class='lnr lnr-chevron-right'></span>
+						</div>
+					</div>
 				</div>
+
 			</div>
 		</section>
 	</xsl:template>
@@ -28,7 +37,6 @@
 		<div class="swiper-slide">
 			<div class="item">
 				<div class="image">
-
 					<a href="#">
 						<xsl:attribute name="href">
 							<xsl:value-of select="Url"></xsl:value-of>
@@ -59,26 +67,18 @@
 							<xsl:value-of select="Title"></xsl:value-of>
 						</a>
 					</div>
-					<ul>
-						<li>
-							<em class="mdi mdi-calendar-blank-outline"></em>
-							<time>
-								<xsl:value-of disable-output-escaping="yes" select="CreatedDate"></xsl:value-of>
-							</time>
-						</li>
-						<li>
-							<em class="mdi mdi-arrow-right"></em>
-							<a>
-								<xsl:attribute name="href">
-									<xsl:value-of select="Url"></xsl:value-of>
-								</xsl:attribute>
-								<xsl:attribute name="title">
-									<xsl:value-of select="Title"></xsl:value-of>
-								</xsl:attribute>
-								<xsl:text disable-output-escaping="yes">Xem thêm</xsl:text>
-							</a>
-						</li>
-					</ul>
+					<div class="btn-left">
+						<em class="mdi mdi-arrow-right"></em>
+						<a>
+							<xsl:attribute name="href">
+								<xsl:value-of select="Url"></xsl:value-of>
+							</xsl:attribute>
+							<xsl:attribute name="title">
+								<xsl:value-of select="Title"></xsl:value-of>
+							</xsl:attribute>
+							<xsl:text disable-output-escaping="yes">Xem thêm</xsl:text>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>

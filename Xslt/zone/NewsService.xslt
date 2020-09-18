@@ -4,9 +4,13 @@
 	<xsl:output method="html" indent="yes" />
 
 	<xsl:template match="/">
-		<h2 class="main-title line">
-			<xsl:value-of disable-output-escaping="yes" select="/ZoneList/ModuleTitle"></xsl:value-of>
-		</h2>
+		<div class="news-other-title">
+			<div class="title"><em class="material-icons">border_color</em>
+				<p>
+					<xsl:value-of disable-output-escaping="yes" select="/ZoneList/ModuleTitle"></xsl:value-of>
+				</p>
+			</div>
+		</div>
 		<ul class="list-news-service">
 			<xsl:apply-templates select="/ZoneList/Zone/Zone"></xsl:apply-templates>
 		</ul>

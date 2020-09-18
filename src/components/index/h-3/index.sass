@@ -7,6 +7,9 @@
 		@media (min-width: 1025px)
 			color: #fff
 	.list-item
+		.item
+			@media screen and ( max-width: 1024px)
+				@apply mb-4
 		.icon
 			display: flex
 			justify-content: center
@@ -55,6 +58,9 @@
 .home-4
 	background: #fff
 	padding: 50px 0 80px
+	@media screen and ( max-width: 1024px)
+		padding: 50px
+		
 	.justify-between
 		@media screen and ( max-width:767px)
 			@apply justify-center
@@ -74,3 +80,25 @@
 				@apply text-16 pt-2
 				@screen lg
 					@apply text-18
+	.mobile-swiper
+		@apply hidden
+		@media screen and ( max-width: 767px)
+			@apply block
+			
+		.container
+			@apply relative
+	.nav-arrow-prev
+		left: -60px
+		@media screen and ( max-width: 1100px)
+			left: -40px
+			
+	.nav-arrow-next
+		right: -60px
+		@media screen and ( max-width: 1100px)
+			right: -40px
+	.nav-arrow-prev,.nav-arrow-next
+		@apply static mx-4 mt-8
+		span
+			@apply text-16
+	.button-wrapper-center
+		@apply mt-8

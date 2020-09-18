@@ -230,6 +230,9 @@
 			width: 100%
 			height: 100%
 			position: relative
+			@media screen and ( max-width: 1024px)
+				padding: 7px 7px 15px 15px
+				
 			img
 				position: relative
 				z-index: 2
@@ -243,6 +246,9 @@
 				width: 100px
 				height: 100px
 				background: $mainColor
+				@media screen and ( max-width: 1024px)
+					width: 75px
+					height: 75px
 			&::after
 				content: ''
 				position: absolute
@@ -251,6 +257,9 @@
 				width: 250px
 				height: 250px
 				background: $mainColor
+				@media screen and ( max-width: 1024px)
+					width: 150px
+					height: 150px
 	.su-menh
 		background-image: url(../img/about/4.png)
 		background-size: cover

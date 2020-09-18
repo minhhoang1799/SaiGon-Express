@@ -1,0 +1,237 @@
+.service-detail
+	@apply py-16
+	
+.service-display-1
+	@apply bg-grey-4
+	.content
+		@apply flex items-start justify-center flex-col h-full
+	.image-wrap
+		padding: 10px 10px 20px 20px
+		position: relative
+		@media screen and ( max-width: 1024px)
+			padding: 7px 7px 15px 15px
+		img
+			@apply relative z-10 w-full
+		&::before
+			content: ''
+			position: absolute
+			top: 0
+			right: 0
+			width: 100px
+			height: 100px
+			background: $mainColor
+			@media screen and ( max-width: 1024px)
+				width: 75px
+				height: 75px
+		&::after
+			content: ''
+			position: absolute
+			bottom: 0
+			left: 0
+			width: 250px
+			height: 250px
+			background: $mainColor
+			@media screen and ( max-width: 1024px)
+				width: 150px
+				height: 150px
+.service-display-2
+	@apply bg-white
+	.zone-description
+		@apply mb-8 px-4 text-14 leading-relaxed
+		*
+			@apply text-14 leading-relaxed
+		@apply px-10
+.service-display-3
+	@apply bg-grey-4
+	.item
+		@apply relative
+		&:hover
+			.over-layout
+				@apply opacity-100
+		.image-wrapper
+			a
+				+img-ratio(300/400)
+		.over-layout
+			@apply absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center flex-col bg-primary opacity-0 transition pointer-events-none
+			&:after
+				content: ''
+				display: block
+				position: absolute
+				pointer-events: none
+				right: 0
+				bottom: 0
+				z-index: 9
+				background: url('../img/icon/bottom-right-fade.png')
+				background-repeat: no-repeat
+				background-size: contain
+				background-position: right
+				width: 210px
+				height: 80px
+				@media screen and ( max-width: 1024px)
+					@apply hidden
+			.icon
+				.wrap
+					display: block
+					height: 64px
+					max-width: 64px
+					min-width: 64px
+					width: auto
+					@media screen and ( max-width: 1024px)
+						height: 48px
+						max-width: 48px
+						min-width: 48px
+						
+					img
+						width: 100%
+						height: 100%
+						object-fit: contain
+			.title
+				@apply text-18 text-white uppercase font-extrabold pt-4
+				@screen lg
+					@apply pt-6 text-24
+		.caption
+			@apply absolute bottom-0 left-0 right-0 flex items-center justify-center pointer-events-none
+			height: 60px
+			background: rgba(#ff0000,.8)
+			.text
+				@apply text-white uppercase font-bold text-16 leading-relaxed px-4
+				display: -webkit-box
+				-webkit-line-clamp: 2
+				-webkit-box-orient: vertical
+				overflow: hidden
+.service-display-5
+	@apply relative bg-grey-4
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		pointer-events: none
+		top: 0
+		left: 0
+		z-index: 9
+		background: url('../img/icon/top-left.png')
+		background-repeat: no-repeat
+		background-size: contain
+		background-position: center
+		width: 250px
+		height: 100px
+		@media screen and ( max-width: 1024px)
+			@apply hidden
+			
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		pointer-events: none
+		right: 0
+		bottom: 0
+		z-index: 9
+		background: url('../img/icon/bottom-right.png')
+		background-repeat: no-repeat
+		background-size: contain
+		background-position: center
+		width: 250px
+		height: 100px
+		@media screen and ( max-width: 1024px)
+			@apply hidden
+	.btn-right
+		@apply absolute z-10
+		bottom: 20px
+		right: 20px
+	.swiper-service-top
+		@apply relative
+		.nav-prev,.nav-next
+			@apply flex items-center justify-center bg-white rounded-full transition mx-2
+			border: 1px solid  #ececec
+			width: 40px
+			height: 40px
+			span
+				@apply text-grey-3 text-24 transition
+			&.swiper-button-disabled
+				@apply opacity-0
+			&:hover
+				@apply bg-primary
+				span
+					@apply text-white
+		.swiper-slide
+			@apply bg-white
+			height: auto !important
+			+boxshadow
+		.image-wrapper
+			a
+				+img-ratio(430/500)
+		.row
+			@apply m-0
+			.col
+				@apply p-0
+		.item
+			@apply pt-10 pl-8 pr-4
+			@media screen and ( max-width: 1440px)
+				@apply pb-16
+			@media screen and ( max-width: 1024px)
+				@apply pb-20
+				
+			.icon
+				display: block
+				height: 42px
+				max-width: 42px
+				min-width: 42px
+				width: auto
+				img
+					width: 100%
+					height: 100%
+					object-fit: contain
+			.title
+				@apply text-primary text-18 leading-relaxed uppercase font-bold my-4
+			.caption
+				@apply text-14 text-main leading-relaxed 
+				*
+					@apply text-14 text-main leading-relaxed 
+
+	.swiper-service-thumb
+		.swiper-slide
+			height: auto !important
+			margin-bottom: 0 !important
+			&:first-child
+				.item
+					border-top: 1px solid #e1e1e1
+			&.swiper-slide-thumb-active
+				.item
+					@apply bg-primary
+					.icon
+						.wrap
+							img
+								filter: brightness(0) invert(1)
+					.content
+						.title,.caption
+							@apply text-white
+				
+
+		
+		.item
+			border-left: 1px solid #e1e1e1
+			border-right: 1px solid #e1e1e1
+			border-bottom: 1px solid #e1e1e1
+			@apply flex px-5 py-3 bg-white
+			@media screen and ( max-width: 1024px)
+				border-top: 1px solid #e1e1e1
+				
+			.icon
+				.wrap
+					display: block
+					height: 36px
+					max-width: 36px
+					min-width: 36px
+					width: auto
+					img
+						width: 100%
+						height: 100%
+						object-fit: contain
+			.content
+				@apply ml-5
+				.title
+					@apply text-18 text-main font-bold mb-2
+				.caption
+					@apply text-14 text-grey-3 font-semibold
+					*
+						@apply text-14 text-grey-3 font-semibold

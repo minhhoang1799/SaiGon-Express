@@ -141,9 +141,11 @@
 						<xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
 						<xsl:value-of select="EditLink" disable-output-escaping="yes"></xsl:value-of>
 					</h5>
-					<p>
-						<xsl:value-of disable-output-escaping="yes" select="BriefContent"></xsl:value-of>
-					</p>
+					<div class="over-flow-scollbar">
+						<p>
+							<xsl:value-of disable-output-escaping="yes" select="BriefContent"></xsl:value-of>
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -167,7 +169,9 @@
 						<xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
 						<xsl:value-of select="EditLink" disable-output-escaping="yes"></xsl:value-of>
 					</h5>
-					<xsl:value-of disable-output-escaping="yes" select="BriefContent"></xsl:value-of>
+					<div class="over-flow-scollbar">
+						<xsl:value-of disable-output-escaping="yes" select="BriefContent"></xsl:value-of>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -23,6 +23,11 @@
 				margin: 0 5px
 				a
 					color: #fff
+					@apply flex items-center justify-center h-full
+					em
+						@apply text-14
+						height: .875rem
+							
 				&:first-child
 					background: #3853a1
 				&:last-child
@@ -36,12 +41,14 @@
 	.full-content
 		padding: 35px 0
 		border-bottom: 1px solid #f3f3f3
-
+		ul
+			list-style-type: disc
+			padding: 0 0 0 20px
 		*
 			@apply leading-relaxed mb-2
 	.main-title
 		text-transform: none
-		font-size: 24px
+		@apply text-24
 		font-weight: 500
 		&.line
 			&:before
@@ -122,3 +129,19 @@
 					height: 40px
 					@apply w-full
 					color: #ffffff !important
+.news-other-title
+	@apply mb-8
+	max-width: 390px
+	.title
+		@apply flex items-center justify-center bg-primary
+		padding: 15px 0
+		em
+			font-size: 18px
+			color: #ffffff
+			margin-right: 5px
+		p
+			font-size: 18px
+			color: #ffffff
+			text-transform: uppercase
+			font-weight: 700
+			margin: 0

@@ -22,18 +22,27 @@
 
 	<xsl:template match="Zone">
 		<div class="col w-full lg:w-1/3">
-			<div class="list-item" data-aos="zoom-in" data-aos-easing="linear" data-aos-delay="250" data-aos-duration="750"
-				data-aos-offset="200">
+			<div class="list-item" data-aos="zoom-in" data-aos-easing="linear" data-aos-delay="250"
+				data-aos-duration="750" data-aos-offset="200">
 				<div class="item-wrapper">
 					<div class="image-transport">
-						<img>
-						<xsl:attribute name="src">
-							<xsl:value-of select="ImageUrl"></xsl:value-of>
-						</xsl:attribute>
-						<xsl:attribute name="alt">
-							<xsl:value-of select="Title"></xsl:value-of>
-						</xsl:attribute>
-						</img>
+						<a>
+							<xsl:attribute name="href">
+								<xsl:value-of select="Url"></xsl:value-of>
+							</xsl:attribute>
+							<xsl:attribute name="title">
+								<xsl:value-of select="Title"></xsl:value-of>
+							</xsl:attribute>
+							<img>
+							<xsl:attribute name="src">
+								<xsl:value-of select="ImageUrl"></xsl:value-of>
+							</xsl:attribute>
+							<xsl:attribute name="alt">
+								<xsl:value-of select="Title"></xsl:value-of>
+							</xsl:attribute>
+							</img>
+						</a>
+
 					</div>
 					<div class="content-wrapper">
 						<div class="icon">
@@ -60,7 +69,16 @@
 						</img>
 					</div>
 					<h3 class="title text-center">
-						<xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
+						<a>
+							<xsl:attribute name="href">
+								<xsl:value-of select="Url"></xsl:value-of>
+							</xsl:attribute>
+							<xsl:attribute name="title">
+								<xsl:value-of select="Title"></xsl:value-of>
+							</xsl:attribute>
+							<xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
+						</a>
+
 					</h3>
 					<div class="content">
 						<xsl:value-of disable-output-escaping="yes" select="Description"></xsl:value-of>
