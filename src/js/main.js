@@ -116,36 +116,24 @@ function stickyNav() {
 		});
 	}
 
-	$(window)
-		.scroll(function () {
-			var scrollDistance = $(window).scrollTop();
-			// Assign active class to nav links while scolling
-			$(".content-scroll-wrapper .product-section-id").each(function (i) {
-				if (
-					$(this).position().top -
-					$(".sticky-navigation").outerHeight() -
-					$("header").outerHeight() -
-					1 <=
-					scrollDistance
-				) {
-					$(".sticky-navigation li.active").removeClass("active");
-					$(".sticky-navigation li").eq(i).addClass("active");
-				}
-			});
-		})
-		.scroll();
+
 	$(".sticky-navigation a").on("click", function (event) {
+		$(this)
+			.parents(".sticky-navigation")
+			.find("li")
+			.removeClass("active");
+		$(this)
+			.parents("li")
+			.addClass("active");
 		if (this.hash !== "") {
 			let offset =
-				$("header").outerHeight() + $(".sticky-navigation").outerHeight();
+				$(".header-2").outerHeight() + $(".sticky-navigation").outerHeight();
 			var hash = this.hash;
 			$("html, body").animate({
 					scrollTop: $(hash).offset().top - offset,
 				},
-				800,
-				function () {
-					window.location.hash = hash;
-				}
+				800
+
 			);
 		} // End if
 	});
